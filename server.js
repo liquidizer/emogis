@@ -16,7 +16,7 @@ fs.readdir('icons', function(err, files) {
       emos.push(files[i]);
     }
 });
-  
+
 http.createServer(function(request, response) {
 
   var url_parts= url.parse(request.url),
