@@ -1,0 +1,15 @@
+!!! html
+html
+  head
+    title Emogis
+    script(type='text/javascript', src='geoloc.js')
+  body
+    h1 Emogis
+    p 
+      span Your position: 
+      span#location Not yet located
+    for emo in emos
+      img(src='icons/#{emo}', onclick='clicked("#{emo}")', alt='#{emo}')
+
+
+
