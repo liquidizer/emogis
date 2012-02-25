@@ -3,12 +3,23 @@ var http = require("http"),
     querystring = require('querystring'),
     path = require("path"),
     fs = require("fs"),
+    request= require('request'),
     mime = require("mime"),
     jade = require("jade"),
     port = process.env.PORT || 8888;
 
 var locmap= {};
 var emos= [];
+
+function geocode(address, callback) {
+var geo='http://maps.googleapis.com/maps/api/geocode/json?sensor=false&output=json&address='+escape(address);
+request(geo, function(error, response, body) { 
+  if (!error && body.results.length>0)
+    callback(false, body.results[0].geometry.location);
+  else
+    callback(true);
+});
+}
 
 fs.readdir('icons', function(err, files) {
   if (!err)
@@ -24,17 +35,29 @@ http.createServer(function(request, response) {
     query= querystring.parse(url_parts.query),
     filename = path.join(process.cwd(), uri);
 
+  if (/^\/geocode/.test(uri)) {
+    geocode(query.address, function(error, loc) {
+      if (error) {
+        response.writeHead(500, {"Content-Type": "text/plain"});
+        response.end("{}");
+      } else {
+        response.writeHead(200, {"Content-Type": "text/plain"});
+        response.end("({ lat:"+loc.lat+", lng:"+loc.lng+" })");
+      }});
+    return;
+  }
+
   var data={ located : false, emos : emos, locations : locmap };
   if (query && query.id && query.lat && query.long) {
-      var entry= { time: new Date().valueOf,
-                   lat: query.lat,
-                   long: query.long,
-                   icon: query.icon };
-      locmap[query.id]= entry;
-      data.located= true;
-      data.query= entry;
+    var entry= { time: new Date().valueOf,
+                 lat: query.lat,
+                 long: query.long,
+                 icon: query.icon };
+    locmap[query.id]= entry;
+    data.located= true;
+    data.query= entry;
   }
-  
+
   if (/\/$/.test(filename))
         filename += 'index.html';
 

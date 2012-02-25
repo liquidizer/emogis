@@ -7,7 +7,9 @@ html
     h1 Emogis
     p 
       span Your position: 
-      span#location Not yet located
+      span#location Not yet located 
+      span(style='margin:10px')
+        a#setloc(href='#', onclick='setLocation()') (Set)
     for emo in emos
       img(src='icons/#{emo}', onclick='clicked("#{emo}")', alt='#{emo}')
 

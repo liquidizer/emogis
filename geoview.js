@@ -10,7 +10,7 @@ function initialize() {
   var me= getPosition(document.getElementById('me'));
   var latlng = new google.maps.LatLng(me.lat, me.long);
   var myOptions = {
-    zoom: 11,
+    zoom: 13,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
