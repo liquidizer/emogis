@@ -59,7 +59,7 @@ http.createServer(function(request, response) {
     locmap[query.id]= entry;
     // clear old entries from the map
     for (var key in locmap) {
-      var faded= Math.floor((now-locmap[key].time) / 10000);
+      var faded= Math.floor((now-locmap[key].time) / 360000);
       if (faded>9)
         delete locmap[key];
       else
