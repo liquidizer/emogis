@@ -25,7 +25,7 @@ function overlay(map) {
     var latlng= new google.maps.LatLng(data[i].lat, data[i].long);
     var marker = new google.maps.Marker({
       position: latlng,
-      icon: 'icons/'+data[i].icon
+      icon: 'icons/overlay/'+data[i].icon+'.png'
     });
     marker.setMap(map);
   }

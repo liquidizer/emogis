@@ -15,4 +15,4 @@ html
       #me(lat='#{query.lat}', long='#{query.long}')
       #data
         for loc in locations
-          .item(lat='#{loc.lat}', long='#{loc.long}', icon='#{loc.icon}')
+          .item(lat='#{loc.lat}', long='#{loc.long}', icon='#{loc.icon}-#{loc.faded}')

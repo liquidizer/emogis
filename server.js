@@ -21,13 +21,14 @@ request(geo, function(error, response, body) {
 });
 }
 
-fs.readdir('icons', function(err, files) {
-  if (!err)
-    for (var i=0; i<files.length; ++i) {
-      emos.push(files[i]);
-    }
-});
-
+emos = [
+    {file: 'wanderer', title: 'Auf dem Weg'},
+    {file: 'sleeping', title: 'Muede'},
+    {file: 'waving', title: 'Kontaktfreudig'},
+    {file: 'sad', title: 'Traurig'},
+    {file: 'happy', title: 'Gluecklich'}
+  ];
+  
 http.createServer(function(request, response) {
 
   var url_parts= url.parse(request.url),
@@ -49,11 +50,21 @@ http.createServer(function(request, response) {
 
   var data={ located : false, emos : emos, locations : locmap };
   if (query && query.id && query.lat && query.long) {
-    var entry= { time: new Date().valueOf,
+    var now= new Date().valueOf();
+    // create entry for now icon
+    var entry= { time: now,
                  lat: query.lat,
                  long: query.long,
                  icon: query.icon };
     locmap[query.id]= entry;
+    // clear old entries from the map
+    for (var key in locmap) {
+      var faded= Math.floor((now-locmap[key].time) / 10000);
+      if (faded>9)
+        delete locmap[key];
+      else
+        locmap[key].faded= faded;
+    }
     data.located= true;
     data.query= entry;
   }

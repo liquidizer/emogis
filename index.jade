@@ -1,17 +1,22 @@
 !!! html
 html
   head
-    title Emogis
+    title Wilkommen bei Emogis
     script(type='text/javascript', src='geoloc.js')
   body
     h1 Emogis
     p 
-      span Your position: 
+      span Deine Position: 
       span#location Not yet located 
       span(style='margin:10px')
         a#setloc(href='#', onclick='setLocation()') (Set)
+    h1 Welches Emoticon beschreibt deinen Zustand?
     for emo in emos
-      img(src='icons/#{emo}', onclick='clicked("#{emo}")', alt='#{emo}')
+      a(href='#',onclick='clicked("#{emo.file}")')
+        div(style='border:1px solid #906;margin:2px;float:left;height:100px;width:150px;text-align:center; padding:5px')
+          img(src='icons/#{emo.file}.png', alt='#{emo.file}')
+          br
+          span #{emo.title}
 
 
 
