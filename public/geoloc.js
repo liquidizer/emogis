@@ -36,7 +36,7 @@ function openView() {
         loc= "address="+entry.address;
       else
         loc= "lat=" + entry.lat + "&long=" + entry.long;
-      window.location= "showmap.html?"+ loc +
+      window.location= "showmap?"+ loc +
         "&id=" + entry.id + "&icon=" + entry.icon ;
     }
   }
