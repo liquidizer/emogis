@@ -67,19 +67,10 @@ app.get('/showmap', function(request, res){
   });
 });
 
-var request= require('request');
-function geocode(address, callback) {
-  var geo='http://maps.googleapis.com/maps/api/geocode/json?sensor=false&output=json&address='+escape(address);
-  request(geo, function(error, response, body) { 
-    if (!error && body.results.length>0)
-      callback(false, body.results[0].geometry.location);
-    else
-      callback(true);
-  });
-}
 
+var geocode= require('./geocode');
 app.get('/geocode',function(request,response) {
-    geocode(request.query.address, function(error, loc) {
+    geocode.resolve(request.query.address, function(error, loc) {
       if (error) {
         response.writeHead(500, {"Content-Type": "text/plain"});
         response.end("{}");

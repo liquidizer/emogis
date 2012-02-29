@@ -3,7 +3,7 @@ window.onload= function() {
   initialize();
   setInterval(function() {
     window.history.back()
-  }, 50000);
+  }, 360000);
 };
 
 function initialize() {
