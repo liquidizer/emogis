@@ -43,7 +43,7 @@ function convertDate(date) {
   if (!match)
     console.log('Invalid time format: '+date);
   if (match[4])
-    return new Date(match[1],match[2],match[3],match[5],match[6]);
+    return new Date(match[1],match[2]-1,match[3],match[5],match[6]);
   else
     return new Date(match[1],match[2],match[3],0,0);
 }
@@ -73,11 +73,13 @@ function updateEventData(event) {
   return event;
 }
 
-function getPlaceMarks() {
+function getPlaceMarks(days) {
+  var now = new Date().getTime();
   var marks={};
   for (var i in eventList) {
     var event= eventList[i];
-    if (event.geo) {
+    var dt= (event._dtstart.getTime()- now)/3600000/24;
+    if (event.geo && dt<days) {
       var mark= marks[event.geo.value];
       if (!mark) {
         mark= { name: event.location.value, events: [] };

@@ -87,7 +87,7 @@ var ical= require('./ical');
 app.get('/placemarks.kml', function(req, res) {
   res.header('Content-Type','application/vnd.google-earch.kml+xml');
   res.render('placemarks', {
-    marks: ical.getPlaceMarks(),
+    marks: ical.getPlaceMarks(req.query.days || 7),
     layout: false
   });
 });
