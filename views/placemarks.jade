@@ -8,4 +8,8 @@ kml(xmlns='http://www.opengis.net/kml/2.2')
         description
           for ev in val.events
             p
-              span= ev.
+              | #{ev._datestr} 
+              - if (ev.url)
+                a(href=ev.url.value)= ev.summary.value
+              - else
+                span= ev.summary.value

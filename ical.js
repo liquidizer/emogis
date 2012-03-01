@@ -21,6 +21,7 @@ request(url, function(error, response, body) {
 // add missing geo information
 function geoCodeEvents(events, i, callback) {
   if (i<events.length) {
+    updateEventData(events[i]);
     if (!events[i].geo && events[i].location) {
       geocode.resolve(events[i].location.value, function(error, location) {
         if (!error) {
@@ -33,6 +34,36 @@ function geoCodeEvents(events, i, callback) {
   } else {
     callback();
   }
+}
+
+function convertDate(date) {
+  var match= date.match(/^(....)(..)(..)(T(..)(..)(..))?$/);
+  if (!match)
+    console.log('Invalid time format: '+date);
+  return new Date(match[1],match[2],match[3],match[5],match[6]);
+}
+
+function formatDate(date) {
+  var month= ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+  var datestr= date.getDate()+'. '+month[date.getMonth()];
+  if (date.getHours()>0)
+    datestr+= ' '+date.getHours()+':'+date.getMinutes();
+  return datestr;
+}
+
+function updateEventData(event) {
+  if (!event.url && event.description) {
+    var match= event.description.value.match(/.*(https?:\/\/[^ ";]+).*/);
+    if (match)
+      event.url= { value : match[1] };
+  }
+  if (event.dtstart) {
+    event._dtstart= convertDate(event.dtstart.value);
+    event._datestr= formatDate(event._dtstart);
+    if (event.dtend)
+      event._dtend= convertDate(event.dtend.value);
+  }
+  return event;
 }
 
 function getPlaceMarks() {

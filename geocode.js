@@ -36,24 +36,25 @@ function codeToCache(address, location) {
 
 // Use Google to Resolve
 function resolveGoogle(address, callback) {
-  var geo='http://maps.googleapis.com/maps/api/geocode?sensor=false&output=json&address='+encodeURI(address);
-  console.log(address);
-  console.log(geo);
+  var geo='http://maps.googleapis.com/maps/api/geocode/json?sensor=false&output=json&address='+encodeURI(address);
   request(geo, function(error, response, body) { 
     if (error) {
       callback(true);
     } else {
       var result= eval("("+body+")");
-      if (result.status=="ZEROS_RESULTS") {
+      if (result.status=="ZERO_RESULTS") {
+        console.log('no result');
         callback(true, "unknown");      
+        return;
       }
       if (result.status!="OK") {
         console.log("Google geocode error: "+result.status);
         callback(true);
+        return;
       }
       var loc= result.results[0].geometry.location;
       loc= loc.lat+','+loc.lng+',0';
-      callback(false, loc);
+      setTimeout(function(){ callback(false, loc); }, 100);
     }
   });
 }
@@ -63,10 +64,11 @@ function resolve(address, callback) {
   if (cached) {
     callback(cached=="unknown", cached);
   } else {
-    callback(true);
-    return;
+    //callback(true);
+    //return;
     resolveGoogle(address, function(error, location) {
-      if (location)
+      console.log('google -> '+location);
+      if (location!==undefined)
         codeToCache(address, location);
       callback(error, location);
     });
