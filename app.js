@@ -85,6 +85,7 @@ app.get('/geocode',function(request,response) {
 // get Calendar placemarks
 var ical= require('./ical');
 app.get('/placemarks.kml', function(req, res) {
+  res.header('Content-Type','application/vnd.google-earch.kml+xml');
   res.render('placemarks', {
     marks: ical.getPlaceMarks(),
     layout: false

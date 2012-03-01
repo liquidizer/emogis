@@ -10,7 +10,7 @@ function initialize() {
   var me= getPosition(document.getElementById('me'));
   var latlng = new google.maps.LatLng(me.lat, me.long);
   var myOptions = {
-    zoom: 13,
+    zoom: 10,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -21,7 +21,7 @@ function initialize() {
 }
 
 function setPlaceMarks(map) {
-  var georssLayer = new google.maps.KmlLayer('http://emogis.dadim.c9.io/placemarks.kml', {
+  var georssLayer = new google.maps.KmlLayer('http://gis.liquidizer.org/placemarks.kml', {
     preserveViewport : true
   });
   georssLayer.setMap(map);

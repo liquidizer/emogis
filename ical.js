@@ -52,7 +52,7 @@ function formatDate(date) {
   var month= ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
   var datestr= date.getDate()+'. '+month[date.getMonth()];
   if (date.getHours()>0)
-    datestr+= ' '+date.getHours()+':'+date.getMinutes();
+    datestr+= ' '+date.getHours()+':'+date.getMinutes().toString().replace(/^(.)$/,'0$1');
   return datestr;
 }
 
