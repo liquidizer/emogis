@@ -7,16 +7,18 @@ var eventList=[];
 var url= 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=';
 
 // loading calendar data
-request(url, function(error, response, body) { 
-  if (!error) {
-    body= body.replace(/\\/g,'');
-    ijp.icalParser.parseIcal(body);
-    var events= ijp.icalParser.ical.events;
-    geoCodeEvents(events, 0, function() {
-      eventList= events;
-    });
-  }
-});
+function reloadCalendar() {
+  request(url, function(error, response, body) { 
+    if (!error) {
+      body= body.replace(/\\/g,'');
+      ijp.icalParser.parseIcal(body);
+      var events= ijp.icalParser.ical.events;
+      geoCodeEvents(events, 0, function() {
+        eventList= events;
+      });
+    }
+  });
+}
 
 // add missing geo information
 function geoCodeEvents(events, i, callback) {
@@ -86,4 +88,7 @@ function getPlaceMarks() {
   }
   return marks;
 }
+
+reloadCalendar();
+setInterval(function() {reloadCalendar();}, 3600000);
 exports.getPlaceMarks= getPlaceMarks;

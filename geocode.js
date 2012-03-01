@@ -52,7 +52,7 @@ function resolveGoogle(address, callback) {
         return;
       }
       var loc= result.results[0].geometry.location;
-      loc= loc.lat+','+loc.lng+',0';
+      loc= loc.lng+','+loc.lat+',0';
       setTimeout(function(){ callback(false, loc); }, 100);
     }
   });
