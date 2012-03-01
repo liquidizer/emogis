@@ -68,17 +68,27 @@ app.get('/showmap', function(request, res){
 });
 
 
+// geocoding API
 var geocode= require('./geocode');
 app.get('/geocode',function(request,response) {
-    geocode.resolve(request.query.address, function(error, loc) {
+    geocode.resolveGoogle(request.query.address, function(error, loc) {
       if (error) {
         response.writeHead(500, {"Content-Type": "text/plain"});
         response.end("{}");
       } else {
         response.writeHead(200, {"Content-Type": "text/plain"});
-        response.end("({ lat:"+loc.lat+", lng:"+loc.lng+" })");
+        response.end("(["+loc+"])");
       }});
     return;
+});
+
+// get Calendar placemarks
+var ical= require('./ical');
+app.get('/placemarks.kml', function(req, res) {
+  res.render('placemarks', {
+    marks: ical.getPlaceMarks(),
+    layout: false
+  });
 });
 
 

@@ -16,7 +16,15 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map_canvas"),
       myOptions);
+  setPlaceMarks(map);
   overlay(map);
+}
+
+function setPlaceMarks(map) {
+  var georssLayer = new google.maps.KmlLayer('http://emogis.dadim.c9.io/placemarks.kml', {
+    preserveViewport : true
+  });
+  georssLayer.setMap(map);
 }
 
 function overlay(map) {
@@ -25,7 +33,8 @@ function overlay(map) {
     var latlng= new google.maps.LatLng(data[i].lat, data[i].long);
     var marker = new google.maps.Marker({
       position: latlng,
-      icon: 'icons/overlay/'+data[i].icon+'.png'
+      icon: 'icons/overlay/'+data[i].icon+'.png',
+      clickable: false
     });
     marker.setMap(map);
   }

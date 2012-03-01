@@ -56,8 +56,8 @@ function setLocation() {
     var request= new XMLHttpRequest();
     request.onreadystatechange= function() {
       var loc= eval(request.responseText);
-      if (loc.lat && loc.lng)
-        success({coords: {latitude: loc.lat, longitude: loc.lng}});
+      if (loc)
+        success({coords: {latitude: loc[0], longitude: loc[1]}});
       else
         setMessage("Localization faild");
     };

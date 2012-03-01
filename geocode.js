@@ -44,15 +44,16 @@ function resolveGoogle(address, callback) {
       callback(true);
     } else {
       var result= eval("("+body+")");
+      if (result.status=="ZEROS_RESULTS") {
+        callback(true, "unknown");      
+      }
       if (result.status!="OK") {
         console.log("Google geocode error: "+result.status);
         callback(true);
       }
-      if (result.results.length>0) {
-        var loc= result.results[0].geometry.location;
-        callback(false, loc.lat+','+loc.lng+',0');
-      } else
-        callback(true);
+      var loc= result.results[0].geometry.location;
+      loc= loc.lat+','+loc.lng+',0';
+      callback(false, loc);
     }
   });
 }
@@ -60,19 +61,20 @@ function resolveGoogle(address, callback) {
 function resolve(address, callback) {
   var cached= locations[address.toLowerCase()];
   if (cached) {
-    callback(false, cached);
+    callback(cached=="unknown", cached);
   } else {
+    callback(true);
+    return;
     resolveGoogle(address, function(error, location) {
-      if (error) {
-        console.log('noaddress: '+address);
-      } else {
-        callback(error, location);
-      }
+      if (location)
+        codeToCache(address, location);
+      callback(error, location);
     });
   }
 }
 
 exports.resolve= resolve;
+exports.resolveGoogle= resolveGoogle;
 
 
 
