@@ -43,7 +43,6 @@ function resolveGoogle(address, callback) {
     } else {
       var result= eval("("+body+")");
       if (result.status=="ZERO_RESULTS") {
-        console.log('no result');
         callback(true, "unknown");      
         return;
       }
@@ -67,7 +66,6 @@ function resolve(address, callback) {
     //callback(true);
     //return;
     resolveGoogle(address, function(error, location) {
-      console.log('google -> '+location);
       if (location!==undefined)
         codeToCache(address, location);
       callback(error, location);

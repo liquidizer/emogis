@@ -40,7 +40,10 @@ function convertDate(date) {
   var match= date.match(/^(....)(..)(..)(T(..)(..)(..))?$/);
   if (!match)
     console.log('Invalid time format: '+date);
-  return new Date(match[1],match[2],match[3],match[5],match[6]);
+  if (match[4])
+    return new Date(match[1],match[2],match[3],match[5],match[6]);
+  else
+    return new Date(match[1],match[2],match[3],0,0);
 }
 
 function formatDate(date) {
@@ -62,6 +65,8 @@ function updateEventData(event) {
     event._datestr= formatDate(event._dtstart);
     if (event.dtend)
       event._dtend= convertDate(event.dtend.value);
+  } else {
+    event._datestr='???';
   }
   return event;
 }
@@ -81,5 +86,4 @@ function getPlaceMarks() {
   }
   return marks;
 }
-
 exports.getPlaceMarks= getPlaceMarks;
