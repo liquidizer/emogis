@@ -1,14 +1,14 @@
-# Manual locations
+# Virtual locations
 unknown:Telko
 unknown:Mumble NRW
 unknown:Mumble
 unknown:versch. Orte
 unknown:Wahllokal vor Ort
+
+# Cached queries
 13.4307435,52.4819051,0:Sandmann, Erlanger Str. / Reuterstraße
 11.1471200,49.3554000,0:Lauf/Peg., Cafe Einstein, Röthenbacher Str. 11, Lauf/Peg.
 9.1234590,49.9860000,0:Kegelzentrum Damm, Strietwalder Straße 1, 63741 Aschaffenburg - Strietwald
-
-# Automatic retrievals
 13.4133900,52.5531600,0:San Marco Restaurant, Schönhauser Allee 102, 10439 Berlin
 13.4385600,52.5147455,0:Jägerklause, Grünberger Str. 1, 10243 Berlin
 13.4058114,52.5307410,0:St. Oberholz, Rosenthaler Straße 72a, 10119 Berlin
@@ -61,10 +61,9 @@ unknown:Wahllokal vor Ort
 11.0592528,49.4466731,0:Nachbarschaftshaus Gostenhof
 9.9840158,54.0729431,0:Neumünster
 9.572010040283203,54.52626207456706,0:Schleswig
-
+11.888517,48.071521,0:Brückenwirt Kirchseeon, [An der Brück 4, 85614 Markt Kirchseeon
 11.3437483,47.9973537,0:Lokal "Königswasser", Maximilianstr. 2b, Starnberg
 12.1047185,49.018775,0:Brandl Bräu, Ostengasse 16, 93047 Regensburg
-unknown:Brückenwirt Kirchseeon, [An der Brück 4, 85614 Markt Kirchseeon
 11.56961,48.17945,0:S71, Schopenhauer Str. 71, 80807 München
 11.11033,47.81818,0:Alter Spiegel, Dorfstr. 17, 82398 Oderding
 13.3591322,52.5342986,0:Café Moab, Berlin, Lehrter Straße 36, 10557 Berlin
@@ -91,8 +90,8 @@ unknown:Brückenwirt Kirchseeon, [An der Brück 4, 85614 Markt Kirchseeon
 11.2143908,49.3751091,0:Landgasthof Bernet, Marktplatz 6, Feucht
 10.1227652,54.3232927,0:Kiel-Gaarden, Räucherei
 9.7144668,53.5811609,0:Wedel
-unknown:Wedel, BWC, Wedel
-unknown:Sigwarts Bräustüberl, Weißenburg, Luitpoldstr. 17
+9.698515,53.583607,0:Wedel, BWC, Wedel
+10.974342,49.030877,0:Sigwarts Bräustüberl, Weißenburg, Luitpoldstr. 17
 11.4645399,48.14089569999999,0:Confetti, Bodenseestr. 1, 81241 München
 10.57218,49.30171,0:Restaurant Korfu, Uzstr. 21, Ansbach
 13.4949508,52.5190891,0:Alte Mensa, Atzpodienstraße 45/46, 10365 Berlin Lichtenberg
@@ -114,7 +113,7 @@ unknown:Sigwarts Bräustüberl, Weißenburg, Luitpoldstr. 17
 10.771151,54.005978,0:Timmendorfer Strand, An der Waldkapelle 26
 10.868611,53.960376,0:Travemünde
 10.21942,50.32573,0:Bad Neustadt a.d.Saale, Franz-Marschall-Str.5
-unknown:Pizzaria Janos, Franz-Marschall-Str.5
+10.21942,50.32573,0:Pizzaria Janos, Franz-Marschall-Str.5
 10.1227652,54.3232927,0:versch. Orte / Kiel
 12.58522,48.8747,0:Straubing, Äußere Passauer Str. 60, Straubing
 13.1167196,51.1229322,0:Döbeln, Treibhaus Döbeln, Café Courage, Bahnhofstraße 56 in 04720 Döbeln
@@ -122,25 +121,27 @@ unknown:Pizzaria Janos, Franz-Marschall-Str.5
 9.7938212,53.6545225,0:Kreis Pinneberg
 7.0229607,49.3964234,0:Saarland
 10.57218,49.30171,0:Restaurant Korfu, Uzstraße 21 Ansbach
-unknown:Niebüll, Mensa Gymnasium
+8.824102878570557,54.787225496433464,0:Niebüll, Mensa Gymnasium
 11.087422,49.4451843,0:Nürnberg, Bratwurst Röslein, Hauptmarkt
 11.087422,49.4451843,0:Nürnberg
 9.88152,53.91829,0:Bad Bramstedt, Am Bleeck 14
 9.98165,53.79437,0:Kaltenkirchen, Rathhausplatz
 10.1227652,54.3232927,0:Kiel
 9.1019015,54.19517639999999,0:Heide - Bürgerhaus
-unknown:Leinburger Bräustüberl, Brunner Straße 1, Leinburg
-unknown:Bernz, Marktplatz 42, Lauf
+11.30851,49.44952,0:Leinburger Bräustüberl, Brunner Straße 1, Leinburg
+11.281778812408447,49.512155630055254,0:Bernz, Marktplatz 42, Lauf
 10.1613,54.30876,0:Kiel, Hans-Geiger-Gymnasium
 10.6861907,53.8615905,0:Lübeck, Domkirchhof 1-3
 10.1060306,54.3577296,0:Ernst-Barlach-Gymnasium Kiel, Charles-Roß-Ring 53, 24106 Kiel
 9.7984691,53.64362569999999,0:Theodor-Heuss Schule Pinneberg
 9.696116700000001,54.21936720000001,0:Schleswig-Holstein
 11.312761,49.3492571,0:Goldener Hirsch, Burgstr. 2, Burgthann
-unknown:Geschäftsstelle, Frauentormauer 42
-unknown:HOTEL - RESTAURANT HELLMANN, Regensburger Str. 32, Schwarzenbruck
-unknown:Neuhaus a. d. Peg., Gaststätte Frankenalb, Bahnhofstraße 17
-unknown:Restaurant im Sportpark Pegnitztal, Mittelbügweg 13, Schwaig
-unknown:Schnaittach, Hotel-Gasthof Kampfer, Fröschau 1
+11.074243,49.447428,0:Geschäftsstelle, Frauentormauer 42
+11.25787,49.35623,0:HOTEL - RESTAURANT HELLMANN, Regensburger Str. 32, Schwarzenbruck
+11.550300121307373,49.626836013699155,0:Neuhaus a. d. Peg., Gaststätte Frankenalb, Bahnhofstraße 17
+11.203501224517822,49.47492861742011,0:Restaurant im Sportpark Pegnitztal, Mittelbügweg 13, Schwaig
+11.342997550964355,49.55837468485874,0:Schnaittach, Hotel-Gasthof Kampfer, Fröschau 1
 11.2418751,49.4815486,0:Röthenbach a. d. Peg., Pizzeria Capri, Rückersdorfer Straße 27
 11.4496137,49.2794624,0:Volksfest/Jurahalle, Festplatz. 92318 Neumarkt
+10.1227652,54.3232927,0:Kiel-Zentrum, Haßstraße / Pumpe
+
