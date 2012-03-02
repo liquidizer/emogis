@@ -38,7 +38,7 @@ function geoCodeEvents(events, i, options, callback) {
     updateEventData(events[i]);
     if (!events[i].geo && events[i].location) {
       var address= events[i].location.value;
-      if (address.match(options.locations[0]))
+      if (options.locations && address.match(options.locations[0]))
         address=options.locations[1];
       geocode.resolve(address, function(error, location) {
         if (!error) {
