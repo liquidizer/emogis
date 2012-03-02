@@ -1,5 +1,6 @@
 // Code by http://code.google.com/p/ijp/
-var icalParser={
+function icalParser() {
+var instance={
 ﻿  ical:{
 ﻿  ﻿  version:'',
 ﻿  ﻿  prodid:'',
@@ -222,6 +223,8 @@ var icalParser={
 ﻿  getEvents:function(){
 ﻿  ﻿  return this.ical.events;
 ﻿  }
+};
+return instance;
 }
 
 exports.icalParser= icalParser;

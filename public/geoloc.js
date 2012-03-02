@@ -57,7 +57,7 @@ function setLocation() {
     request.onreadystatechange= function() {
       var loc= eval(request.responseText);
       if (loc)
-        success({coords: {latitude: loc[0], longitude: loc[1]}});
+        success({coords: {latitude: loc[1], longitude: loc[0]}});
       else
         setMessage("Localization faild");
     };
@@ -65,6 +65,7 @@ function setLocation() {
     request.send(null);
   } else {
     input= document.createElement('input');
+    input.setAttribute('placeholder','Adresse');
     input.value= window.localStorage.getItem('address');
     obj.parentNode.insertBefore(input, obj);
   }

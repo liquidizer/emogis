@@ -6,10 +6,12 @@ kml(xmlns='http://www.opengis.net/kml/2.2')
         Point
           coordinates= key
         description
-          for ev in val.events
-            | #{ev._datestr} 
-            - if (ev.url)
-              a(href=ev.url.value)= ev.summary.value
-            - else
-              span= ev.summary.value
-            br
+          table
+            for ev in val.events
+              tr
+                td= ev._datestr
+                td
+                  - if (ev.url)
+                    a(href=ev.url.value)= ev.summary.value
+                  - else
+                    span= ev.summary.value

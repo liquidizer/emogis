@@ -1,9 +1,8 @@
 # Virtual locations
 unknown:Telko
-unknown:Mumble NRW
-unknown:Mumble
 unknown:versch. Orte
 unknown:Wahllokal vor Ort
+unknown:folgt
 
 # Cached queries
 13.4307435,52.4819051,0:Sandmann, Erlanger Str. / Reuterstraße
@@ -144,4 +143,100 @@ unknown:Wahllokal vor Ort
 11.2418751,49.4815486,0:Röthenbach a. d. Peg., Pizzeria Capri, Rückersdorfer Straße 27
 11.4496137,49.2794624,0:Volksfest/Jurahalle, Festplatz. 92318 Neumarkt
 10.1227652,54.3232927,0:Kiel-Zentrum, Haßstraße / Pumpe
+
+13.1224219,52.386618,0:Stadtgeschäftsstelle, August-Bebel-Straße 68, 14482 Potsdam
+unknown:Café Alex am Platz der Einheit
+12.177885,53.1497201,0:Pritzwalk
+unknown:Bürgerhaus, Ritterstraße 10, 14513 Teltow (nahe Markt und Kirche)
+12.5601619,52.40718030000001,0:60° Waschcafe in der Steinstraße, 14776 Brandenburg an der Havel
+12.810799,52.92957,0:Neuruppin, Rheinsberger Tor
+13.8777546,52.5659128,0:Restaurant "Zur Fähre", Strausberg
+13.4093271,52.366395,0:Restaurant "Mahlower", Marktplatz 8, 15831 Mahlow
+13.3736149,52.509504,0:Potsdam, Filmmuseum
+13.026067,52.3127264,0:Schneiders in Michendorf am Bhf. Michendorf
+13.4009404,51.5178252,0:Bad Liebenwerda, Lubwartschänke
+13.2394519,52.752674,0:Oranienburg, Ristorante Il Castello im "Blumenthalschen Haus" in Oranienburg
+13.6943727,52.1099813,0:Halbe
+13.6267109,52.2965312,0:Stammtisch in Königs Wusterhausen ("Grieche" Alexandros, Bahnhofstraße 23, 15711, Königs Wusterhausen )
+unknown:Restaurant „Zum Kometen“, Leipziger Str.55 15230 Frankfurt(Oder) http://www.zumkometen.de
+12.5868693,52.1369263,0:Im Burgbräuhaus, Wittenbergerstr. 1, 14806 Bad Belzig
+13.10805,52.36289,0:LGS Potsdam, am Bürohochhaus 2-4, 14478 Potsdam
+12.7990783,52.9154545,0:Neuruppin
+unknown:Steins Bier- und Weinstuben, Hauptstraße 78, 03253 Doberlug-Kirchhain Tel. 035322/2307
+14.3328679,51.75631079999999,0:Weihnachtsmarkt Cottbus
+7.923207799999998,51.7096743,0:Alleestraße 9
+13.4418065,52.3974604,0:12529 Schönefeld, Karl-Marx-Str. 147a
+13.300441,52.388282,0:S - Bahnhof Teltow
+13.6259337,52.3004282,0:Hoenckes - Altes Wirtshaus, Kirchplatz 4, 15711 Königs Wusterhausen
+13.7875871,52.83713299999999,0:Wilder Eber, Heegemühler Str. 16, Eberswalde
+12.5615809,52.40780059999999,0:60° Waschcafe, Steinstraße 61, 14776 Brandenburg an der Havel
+14.6704751,52.1439891,0:"Schnitzel-Wirtschaft", Königstraße 65, 15890 Eisenhüttenstadt
+unknown:Schneiders in Michendorf, Am Bahnhof 1, 14552 Michendorf (im Bahnhof)
+13.05383,52.39962000000001,0:Geschäftsstelle RLS, Dortustr. 53, Potsdam
+13.733,52.117,0:Schenkenländchen
+14.5469722,52.3468244,0:Restaurant „Pizza Paradieso“, Rosa-Luxemburg-Straße 42 15230 Frankfurt(Oder)
+13.144615,53.1885,0:Brandenburgisches Forstmuseum Fürstenberg
+13.4068179,52.5195766,0:Berlin, Neptunbrunnen
+14.3328679,51.75631079999999,0:Cottbus, Hauptbahnhof
+unknown:Café Bohne im Haus 6 in Griebnitzsee
+12.5316444,52.4125287,0:Brandenburg an der Havel
+13.7875871,52.83713299999999,0:Eberswalde Quartier No7
+12.5603238,52.4071024,0:60°Waschcafé, Steinstraße 54, 14776 Brandenburg an der Havel
+13.072691,52.3941887,0:Potsdam, Café Bohne im Haus 6 in Griebnitzsee
+unknown:“Gleis 6″ im S-Bahnhof Babelsberg
+13.44302,52.29796,0:"Wald-Restaurant", Sachsenkorso 99 - Ecke Kienitzer Str., 15834 Rangsdorf
+14.3258,51.76616,0:03046 Cottbus; Friedlieb-Runge-Straße 1; Brasserie
+14.3352689,51.7597821,0:03046 Cottbus; Neustädter Straße 15; U-Boot
+unknown:Rest. Caesar & Cleopatra, Baruther Str. 30, 14943 Luckenwalde
+14.62747,52.14718,0:Restaurante "Toskana" Straße der Republik 47, 15890 Eisenhüttenstadt
+13.327178,52.6333266,0:Glienicke
+13.05697,52.54431,0:Cocktailbar Lounge No.1, Märkischer Platz 1, 14624 Dallgow
+13.072691,52.3941887,0:Potsdam, Universität in Griebnitzsee, Raum 3.6.S21
+13.7066471,51.6301459,0:Finsterwalde - Radigks Brauhaus
+13.2394519,52.752674,0:Oranienburg, Restaurant "Il Castello"
+13.6267109,52.2965312,0:"Grieche" Alexandros, Bahnhofstraße 23, 15711, Königs Wusterhausen
+13.8777546,52.5659128,0:Strausberg, Kaffee Kirsche
+13.23586,52.75379,0:Ristorante Il Castello, Schloßplatz 5, 16515 Oranienburg
+13.0783671,52.3809013,0:Humboldt-Gymnasium, Heinrich-Mann-Allee 103, 14473 Potsdam
+8.7487443,50.092231,0:Weinstube, Taunusstr 19, Offenbach
+8.776084299999999,50.09563620000001,0:Offenbach am Main
+13.434483,52.481382,0:Rathaus Neukölln, Karl-Marx-Str. 83, 12043 Berlin
+unknown:Zum Fliegenden Holländer
+13.072691,52.3941887,0:Landesgeschäftsstelle (Am Bürohochhaus 2-4, 14776 Potsdam)
+13.1224219,52.386618,0:August-Bebel-Str. 68, 14482 Potsdam
+14.062952,52.3680807,0:Texanisch-mexikanisches Restaurant "Speedy", Wriezener Straße 61a, 15517 Fürstenwalde
+11.8777156,50.9930477,0:"Märkischer Hof Gosen", Storkower Str. 5, 15537 Gosen, www.maerkischer-hof-gosen.de
+13.026067,52.3127264,0:"Schneiders" - Michendorf, Bahnhof Michendorf
+13.072691,52.3941887,0:zeitnah unter http://piraten-potsdam.de
+13.1224219,52.386618,0:Stadtgeschäftsstelle (August-Bebel-Str. 68, 14482 Potsdam)
+13.5889014,52.6784832,0:PiPaTa Bernau Brauerstrasse 8-10 16321 Bernau
+9.1679281,48.7778639,0:am Berliner Hauptbahnhof
+13.072691,52.3941887,0:Café Alex; Platz der Einheit in Potsdam
+13.8777546,52.5659128,0:Strausberg, Restaurant "Zur Fähre"
+unknown:Letschin, Bistro ISTANBULL
+13.2197579,52.4027045,0:Adolf-Grimme-Ring 10, 14532 Kleinmachnow
+13.0906642,52.55898939999999,0:Bar Taparei, am Bahnhof Falkensee, Potsdamer Str. 2
+13.1756245,52.089437,0:14943 Luckenwalde - Baruther Str. 30
+13.89168,52.57877,0:Mühlenweg 6a, Strausberg
+unknown:Grandcafe & Brasserie Rene,Karl-Marx-Straße 7, 15230 Frankfurt (Oder)
+13.7167878,52.3935573,0:Lokalität "Märkischer Hof Gosen", Storkower Str., 15537 Gosen
+13.44302,52.29796,0:Wald-Restaurant, Sachsenkorso 99 /Ecke Kienitzer Straße, 15834 Rangsdorf
+14.3328679,51.75631079999999,0:Cottbus
+13.0310186,52.3162062,0:Schmeiders, Am Bahnhof 1, 14552 Michendorf
+13.8777546,52.5659128,0:Strausberg, Große Str. 1, Restaurant "Zur Fähre"
+13.2197579,52.4027045,0:Treffpunkt: Im Rathaus Kleinmachnow, kleiner Bürgersaal, Adolf- Grimme- Ring 10, 14532 Kleinmachnow
+13.84239,52.53086,0:„Waldidyll“, Hennickendorfer Chaussee 7, Strausberg
+unknown:"Gleis 6" im S-Bahnhof Babelsberg
+13.072691,52.3941887,0:Café Alex, Potsdam
+13.7065435,52.4714367,0:Restaurant "Korfu", Dorfstr. 24, 15666 Schöneiche
+13.10805,52.36289,0:LGS ,Am Bürohochhaus 2-4, 14478 Potsdam
+13.6267109,52.2965312,0:Restaurant Alexandros, Bahnhofstraße 23, 15711 Königs Wusterhausen
+13.10805,52.36289,0:Am Bürohochhaus 2-4, 14478 Potsdam
+unknown:"Cäsar & Cleopatra", Baruther Str. 30, 14943 Luckenwalde
+14.00415,53.01767,0:Café Schmidt, Markt 21, 16278 Angermünde
+14.3328679,51.75631079999999,0:quasiMONO, Cottbus
+12.9363967,52.3771996,0:"Unter den Linden", Unter den Linden 3, 14542 Werder / Havel
+unknown:„Zum Kometen“, Leipziger Str.55 15230 Frankfurt(Oder) http://www.zumkometen.de
+13.2162494,52.1313922,0:Brandenburg an der Havel, Frankfurt an der Oder, Kleinmachnow , Strausberg, weitere...
+
 

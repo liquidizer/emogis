@@ -1,45 +1,60 @@
 var request= require('request');
-var ijp= require('./ijp');
 var geocode= require('./geocode');
+var ijp= require('./ijp');
 
-
-var eventList=[];
-var url= 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=';
+var eventLists=[];
+var sources= [
+    { url: 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=' }, 
+    { url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics',
+      locations: [/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam']},
+    { url: 'http://www.piratenpartei-hessen.de/calendar/ical' }
+    ];
 
 // loading calendar data
-function reloadCalendar() {
-  request(url, function(error, response, body) { 
-    if (!error) {
-      body= body.replace(/\\/g,'');
-      ijp.icalParser.parseIcal(body);
-      var events= ijp.icalParser.ical.events;
-      geoCodeEvents(events, 0, function() {
-        eventList= events;
-      });
-    }
-  });
+function reloadCalendar(index) {
+  if (index<sources.length) {
+    var url= sources[index].url;
+    console.log('loading ('+index+') : '+url);
+    request(url, function(error, response, body) { 
+      if (!error) {
+        body= body.replace(/\\/g,'');
+        var parser= ijp.icalParser();
+        parser.parseIcal(body);
+        var events= parser.ical.events;
+        geoCodeEvents(events, 0, sources[index], function() {
+          eventLists[index]= events;
+          reloadCalendar(index+1);
+        });
+      }
+    });
+  } else {
+    console.log('all events loaded');
+  }
 }
 
 // add missing geo information
-function geoCodeEvents(events, i, callback) {
+function geoCodeEvents(events, i, options, callback) {
   if (i<events.length) {
     updateEventData(events[i]);
     if (!events[i].geo && events[i].location) {
-      geocode.resolve(events[i].location.value, function(error, location) {
+      var address= events[i].location.value;
+      if (address.match(options.locations[0]))
+        address=options.locations[1];
+      geocode.resolve(address, function(error, location) {
         if (!error) {
           events[i].geo= { value: location };
         }
-        geoCodeEvents(events, i+1, callback);
+        geoCodeEvents(events, i+1, options, callback);
       });
     } else
-      geoCodeEvents(events, i+1, callback);
+      geoCodeEvents(events, i+1, options, callback);
   } else {
     callback();
   }
 }
 
 function convertDate(date) {
-  var match= date.match(/^(....)(..)(..)(T(..)(..)(..))?$/);
+  var match= date.match(/^(....)(..)(..)(T(..)(..)(..))?Z?$/);
   if (!match)
     console.log('Invalid time format: '+date);
   if (match[4])
@@ -76,21 +91,22 @@ function updateEventData(event) {
 function getPlaceMarks(days) {
   var now = new Date().getTime();
   var marks={};
-  for (var i in eventList) {
-    var event= eventList[i];
-    var dt= (event._dtstart.getTime()- now)/3600000/24;
-    if (event.geo && dt<days) {
-      var mark= marks[event.geo.value];
-      if (!mark) {
-        mark= { name: event.location.value, events: [] };
-        marks[event.geo.value]= mark;
+  for (var i in eventLists)
+    for (var j in eventLists[i]) {
+      var event= eventLists[i][j];
+      var dt= (event._dtstart.getTime()- now)/3600000/24;
+      if (event.geo && dt<days) {
+        var mark= marks[event.geo.value];
+        if (!mark) {
+          mark= { name: event.location.value, events: [] };
+          marks[event.geo.value]= mark;
+        }
+        mark.events.push(event);
       }
-      mark.events.push(event);
-    }
   }
   return marks;
 }
 
-reloadCalendar();
-setInterval(function() {reloadCalendar();}, 3600000);
+reloadCalendar(0);
+setInterval(function() {reloadCalendar(0);}, 3600000);
 exports.getPlaceMarks= getPlaceMarks;

@@ -22,7 +22,7 @@ fs.readFile('locations', function(err, data) {
 
 // cache an address
 function codeToCache(address, location) {
-  if (locations[address.toLowerCase()]==location)
+  if (locations[address.toLowerCase()])
     return;
   locations[address.toLowerCase()]= location;
   fs.readFile('locations', function(err, data) {
@@ -60,11 +60,13 @@ function resolveGoogle(address, callback) {
 
 function resolve(address, callback) {
   var cached= locations[address.toLowerCase()];
-  if (cached) {
+  if (address.match(/^mumble|online.*mumble/i)) {
+    callback(false);
+  }
+  else if (cached) {
     callback(cached=="unknown", cached);
-  } else {
-    //callback(true);
-    //return;
+  } 
+  else {
     resolveGoogle(address, function(error, location) {
       if (location!==undefined)
         codeToCache(address, location);

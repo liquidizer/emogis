@@ -92,6 +92,12 @@ app.get('/placemarks.kml', function(req, res) {
   });
 });
 
+app.get('/placemarks.html', function(req, res) {
+  res.render('placemarks', {
+    marks: ical.getPlaceMarks(req.query.days || 7),
+    layout: false
+  });
+});
 
 // Only listen on $ node app.js
 if (!module.parent) {
