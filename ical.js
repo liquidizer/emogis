@@ -6,7 +6,8 @@ var eventLists=[];
 var sources= [
     { url: 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=' }, 
     { url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics',
-      locations: [/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam']},
+      locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
+                  [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] },
     { url: 'http://www.piratenpartei-hessen.de/calendar/ical' }
     ];
 
@@ -38,8 +39,10 @@ function geoCodeEvents(events, i, options, callback) {
     updateEventData(events[i]);
     if (!events[i].geo && events[i].location) {
       var address= events[i].location.value;
-      if (options.locations && address.match(options.locations[0]))
-        address=options.locations[1];
+      if (options.locations)
+        for (var route in options.locations) 
+          if (address.match(options.locations[route][0]))
+            address=options.locations[route][1];
       geocode.resolve(address, function(error, location) {
         if (!error) {
           events[i].geo= { value: location };
@@ -88,20 +91,22 @@ function updateEventData(event) {
   return event;
 }
 
-function getPlaceMarks(days) {
-  var now = new Date().getTime();
+function getPlaceMarks() {
   var marks={};
   for (var i in eventLists)
     for (var j in eventLists[i]) {
       var event= eventLists[i][j];
-      var dt= (event._dtstart.getTime()- now)/3600000/24;
-      if (event.geo && dt<days) {
+      if (event.geo && event.geo.value) {
         var mark= marks[event.geo.value];
         if (!mark) {
-          mark= { name: event.location.value, events: [] };
+          mark= { name: event.location.value, events: [], fixed: {}};
           marks[event.geo.value]= mark;
         }
-        mark.events.push(event);
+        var key=event.summary.value.toLowerCase();
+        if (!mark.fixed[key]) {
+          mark.fixed[key]= true;
+          mark.events.push(event);
+        }
       }
   }
   return marks;

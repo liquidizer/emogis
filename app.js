@@ -87,14 +87,14 @@ var ical= require('./ical');
 app.get('/placemarks.kml', function(req, res) {
   res.header('Content-Type','application/vnd.google-earch.kml+xml');
   res.render('placemarks', {
-    marks: ical.getPlaceMarks(req.query.days || 7),
+    marks: ical.getPlaceMarks(),
     layout: false
   });
 });
 
 app.get('/placemarks.html', function(req, res) {
   res.render('placemarks', {
-    marks: ical.getPlaceMarks(req.query.days || 7),
+    marks: ical.getPlaceMarks(),
     layout: false
   });
 });
