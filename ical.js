@@ -8,8 +8,26 @@ var sources= [
     { url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics',
       locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
                   [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] },
+    { url: 'http://cal.piraten-thueringen.de/calendars/Hauptkalender.ics' },
     { url: 'http://www.piratenpartei-hessen.de/calendar/ical' }
     ];
+
+// expand subcalendars for NRW 
+expandDaviCal('http://kalender.piratenpartei-nrw.de');
+function expandDaviCal(url) {
+  request(url, function(error, response, body) {
+    if (!error) {
+      var exp = /<select name="cal\[\]"(.|\n)*\/select/;
+      var match = body.toString().match(exp);
+      var exp2 = /option value="([^"]+)"/g;
+      var match2 = match[0].match(exp2);
+      for (var i in match2)
+        sources.push({
+          url : url+'/calendars/'+match2[i].match(/value="([^"]+)"/)[1]+'.ics'
+        });
+    }
+  });
+}
 
 // loading calendar data
 function reloadCalendar(index) {

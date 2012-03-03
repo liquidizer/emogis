@@ -4,6 +4,12 @@ var fs= require('fs');
 // location cache
 var locations= {};
 
+// unify nearby locations
+function unify(loc) {
+  // TODO
+  return loc;
+}
+
 // load cache from disk
 fs.readFile('locations', function(err, data) {
   if (err) {
@@ -14,7 +20,7 @@ fs.readFile('locations', function(err, data) {
     for (var i in lines) {
       var match= lines[i].match(/(unknown|[0-9.,]+):(.*)/);
       if (match) {
-        locations[match[2].toLowerCase()]= match[1];
+        locations[match[2].toLowerCase()]= unify(match[1]);
       }
     }
   }
@@ -24,7 +30,7 @@ fs.readFile('locations', function(err, data) {
 function codeToCache(address, location) {
   if (locations[address.toLowerCase()])
     return;
-  locations[address.toLowerCase()]= location;
+  locations[address.toLowerCase()]= unify(location);
   fs.readFile('locations', function(err, data) {
     if (!err) {
       var cacheFile= data.toString();

@@ -1,8 +1,10 @@
+
 # Virtual locations
 unknown:Telko
 unknown:versch. Orte
 unknown:Wahllokal vor Ort
 unknown:folgt
+unknown:Location unbekannt
 
 # Cached queries
 13.4307435,52.4819051,0:Sandmann, Erlanger Str. / Reuterstraße
@@ -144,6 +146,7 @@ unknown:folgt
 11.4496137,49.2794624,0:Volksfest/Jurahalle, Festplatz. 92318 Neumarkt
 10.1227652,54.3232927,0:Kiel-Zentrum, Haßstraße / Pumpe
 
+# NRW
 13.1224219,52.386618,0:Stadtgeschäftsstelle, August-Bebel-Straße 68, 14482 Potsdam
 unknown:Café Alex am Platz der Einheit
 12.177885,53.1497201,0:Pritzwalk
@@ -237,3 +240,211 @@ unknown:"Cäsar & Cleopatra", Baruther Str. 30, 14943 Luckenwalde
 unknown:„Zum Kometen“, Leipziger Str.55 15230 Frankfurt(Oder) http://www.zumkometen.de
 13.2162494,52.1313922,0:Brandenburg an der Havel, Frankfurt an der Oder, Kleinmachnow , Strausberg, weitere...
 13.06105,52.40967000000001,0:Alleestraße 9, Potsdam
+
+
+6.38936,51.25882,0:Rathausmarkt 1 41747 Viersen
+7.68542,51.53464,0:Massener Str. 33-35 59423 Unna
+7.468828699999999,51.7006412,0:Ludgeristraße 90 59379 Selm
+7.01007,51.10465,0:Bahnhofstraße 11b 42799 Leichlingen
+6.85375,51.4704,0:Elsässer Straße 25 46045 Oberhausen
+7.834930000000001,51.68968,0:Jürgen-Graef-Allee 13 59065 Hamm
+6.98337,51.575,0:Rentforter Straße 58 45964 Gladbeck
+7.24744,51.45365,0:Markstraße 139 44803 Bochum
+7.643125,51.95654260000001,0:Wolbeckerstrasse 71, 48155 Münster
+8.7257336,52.0799479,0:Werler Straße 102 32107 Bad Salzuflen
+7.137867399999999,51.2606254,0:Schreinerstraße 26 42105 Wuppertal Elberfeld
+7.018384500000001,51.0672503,0:Lützenkirchener Str. 85, 51379 Leverkusen-Opladen
+6.8588445,51.840713,0:Raesfelder Str. 3, 46325 Borken
+7.45505,51.5104243,0:Humboldtstraße 44 44137 Dortmund
+8.882056,51.93472790000001,0:Meierstraße 23 32756 Detmold
+7.5565,51.62813,0:Münsterstraße 249 44534 Lünen
+7.28596,50.77332999999999,0:Bahnhofstraße 19 53773 Hennef
+8.54642,52.02016,0:Mühlenstrasse 2 33607 Bielefeld
+7.33534,51.44022,0:Marktstraße 16 58452 Witten
+6.15821,51.67597,0:Am Steintor 17 47574 Goch
+6.84992,51.29635,0:Am alten Steinhaus 4 40878 Ratingen
+7.05519,51.57850999999999,0:Springemarkt 2 45894 Gelsenkirchen-Buer
+7.43778,52.27776,0:Klosterstraße 15, 48431 Rheine
+6.71751,51.45500999999999,0:Rheinanlagen 13 47198 Duisburg-Homberg
+6.766019999999999,51.37929,0:Sittardsberger Allee 75 47249 Duisburg-Buchholz
+6.9917,51.25256,0:Böttingerweg 10 40822 Mettmann
+6.127619999999999,51.77938,0:Hoffmannallee 53d 47533 Kleve
+8.9099738,52.2867071,0:Königstraße 41 32423 Minden
+6.928590000000001,51.52544,0:Gladbecker Straße 41 46236 Bottrop
+6.620159999999999,51.83895,0:Ostmauer 8, 46397 Bocholt
+6.61846,51.22743,0:Maubishof 24 41564 Kaarst
+7.1967397,51.27114719999999,0:Alter Markt 28 42275 Wuppertal Barmen
+7.0614063,51.3394747,0:Langenberger Straße 125 42551 Velbert
+8.0271724,50.8951589,0:Poststraße 1 57076 Siegen
+7.2382542,51.2103452,0:Gertenbachstraße 35 42899 Remscheid-Lüttringhausen
+7.198239999999999,51.61677,0:Am Lohtor 2 45657 Recklinghausen
+6.6905672,51.19794899999999,0:Neustrasse 19 41460 Neuss
+6.8736415,51.4262877,0:Ruhrufer 5 45479 Mülheim an der Ruhr
+6.5634475,51.3336834,0:Königstraße 153, 47798 Krefeld
+7.6606049,51.7401226,0:Benediktus-Kirchplatz 2, 59387 Ascheberg
+6.198994799999999,51.62885439999999,0:Wasserstraße 50 47652 Weeze
+7.6356049,51.6624348,0:Markt 2, 59368 Werne
+7.829876299999999,51.8466681,0:Ladestrasse 1, 48324 Sendenhorst
+7.0175968,51.1627606,0:Merscheider Str. 77?79 42699 Solingen
+7.565930000000001,51.43965,0:Wilhelmstraße 26, 58239 Schwerte
+6.6727649,51.454221,0:Viktoriastr. 54 47443 Moers
+7.664922600000001,51.5936931,0:Nordstraße 11 59174 Kamen
+7.007495,51.4590155,0:Friedrich-Ebert-Str. 18 45127 Essen
+6.7823001,51.24189699999999,0:Collenbachstraße 21 40476 Düsseldorf
+7.581319999999999,51.03554,0:Am Sandberg 36, 51645 Gummersbach
+7.110245099999999,50.7106386,0:Burbacher Straße 222 53129 Bonn
+6.0826121,50.77803780000001,0:Pontstraße 52 52062 Aachen
+8.71391,52.19773000000001,0:Bünderstr. 24 32584 Löhne
+7.18533,51.18105,0:Alleestraße 85, 42853 Remscheid
+8.0629662,51.399075,0:Schloßstraße 21 59821 Arnsberg
+7.2263306,51.5345956,0:Bochumer Str. 23 44623 Herne
+7.001937400000001,51.0643537,0:Peter-Neuenheuser-Straße 5 51379 Leverkusen-Opladen
+6.8384782,51.0965713,0:Krefelder Straße 14 41539 Dormagen
+6.48595,51.25648,0:Hauptstr. 150, 47877 Willich
+6.6499482,50.61323059999999,0:Rehgasse 1, 53894 Kommern
+7.5311967,50.98469009999999,0:Hohler Straße 18, 51645 Gummersbach
+6.2730292,51.2133602,0:Markt 11, 41366 Schwalmtal Kreis Viersen
+6.7590143,51.50111880000001,0:Weselerstrasse 10 47169 Duisburg-Marxloh
+6.445720000000001,51.2041,0:Eickener Straße 140, 41063 Mönchengladbach
+7.328371399999999,51.3144398,0:Elberfelder Straße 41, 58285 Gevelsberg
+6.6269481,51.2754135,0:An der Rheinbahn 2, 40670 Meerbusch
+6.78145,50.96221000000001,0:Ehrenfriedstr. 14, 50259 Pulheim
+7.092098399999999,50.74041159999999,0:Im Krausfeld 8 , 53111 Bonn 53111 Bonn
+6.632160000000001,51.65527,0:Jahnstr. 19, 46485 Wesel
+6.483797699999999,50.8027005,0:Markt 1, 52379 Düren
+8.1073159,51.56561809999999,0:Ulrichertor 4 59494 Soest
+8.3453684,51.67483439999999,0:Poststraße 15 59555 Lippstadt
+7.352287599999999,51.20327589999999,0:Kaiserstraße 36 42477 Radevormwald
+8.8954594,52.0284232,0:Mittelstraße 124 32657 Lemgo
+7.083002700000001,51.647301,0:Hochstraße 1 45768 Marl
+7.1377682,51.5933558,0:Antoniusstraße 9, 45699 Herten
+7.335640000000001,51.432,0:Ruhrstr. 86, 58452 Witten
+7.2074254,51.1355329,0:Schwanen 14 42929 Wermelskirchen
+6.578668599999999,51.45197599999999,0:Hochstrasse 15, 47506 Neukirchen Vluyn
+6.958463399999999,50.90605859999999,0:Brühler Straße 108, 50968 Köln
+9.3836436,51.6922381,0:Kasseler Straße 2, 37688 Beverungen
+7.076051,51.0113287,0:Altenberger-Dom-Straße 115, 51467 Bergisch Gladbach
+8.7567798,51.7158028,0:Liboristraße 5 33098 Paderborn
+7.842673199999999,52.03722339999999,0:Hauptstrasse 66, 48346 Ostbevern
+8.354453099999999,51.4459078,0:Hauptstraße 49 59581 Warstein
+6.221987899999999,51.04294290000001,0:Breite Straße 3, 41836 Hückelhoven-Hilfarth
+7.4758444,51.35654460000001,0:Mittelstraße 8 58095 Hagen
+6.3961079,51.2679941,0:Rahser Straße 172, 41748 Viersen
+8.4269365,51.88819909999999,0:Am Hüttenbrink 26 33334 Gütersloh
+6.8414828,51.51484989999999,0:Hagedornstr. 1, 4614 Oberhausen
+6.653707499999999,51.6534456,0:, 46485 Wesel
+6.9188545,51.8881016,0:Hüpohl 29-31, 46342 Velen-Ramsdorf
+6.7565064,51.4316919,0:Beekstrasse 4 47053 Duisburg
+7.12519,50.79799,0:Larstraße 168, 53844 Troisdorf - Sieglar
+6.9305223,51.52334380000001,0:Friedrich-Ebert-Straße 134, 46236 Bottrop
+7.6814401,51.3580473,0:Alexanderhoehe 4 58644 Iserlohn
+6.0826353,50.77798749999999,0:Pontstraße 50 52066 Aachen
+8.709299999999999,52.19836,0:Schützenstr. 17 32584 Löhne
+6.60433,51.08951,0:Nordstraße 44, 41515 Grevenbroich
+7.155889999999999,50.81373689999999,0:Am Bürgerhaus 53840 Troisdorf
+6.45205,51.10057,0:Wickrather Str. 11, 41363 Jüchen/Hochneukirch
+6.5516634,51.2648225,0:Peterstr. 30 47877 Willich
+6.632399899999999,51.6556501,0:Jahnstrasse 15, 46485 Wesel
+6.821178,50.9111493,0:Kölner Str. 39, 50226 Frechen
+8.1437237,51.8237856,0:Geiststr. 3, 59302 Oelde
+6.7612993,51.43054300000001,0:Am Dellplatz 16 A 47051 Duisburg
+6.8414828,51.51484989999999,0:Hagedornstraße 1 46149 Oberhausen-Sterkrade
+6.92516,51.52274,0:Altmarkt 2 46045 Oberhausen-Stadtmitte
+11.2430079,48.1739373,0:Mehrgenerationenhaus FFB, Sulzbogen 56, 82256 Fürstenfeldbruck
+10.21942,50.32573,0:97616 Bad Neustadt a.d.Saale, Franz-Marschall-Str.5
+11.35378,48.16966000000001,0:Wirtshaus Istrien, Adenauerstrasse 18, 	82178 Puchheim 
+13.327178,52.6333266,0:Glienicke/Nordbahn
+6.082642799999999,50.779246,0:Piratenbüro, Hirschgraben 24, Aachen
+unknown:Piratenbüro H24, Hirschgraben 24-26
+7.1967397,51.27114719999999,0:Loge, Alter Markt 28, 42275 Wuppertal
+7.1967397,51.27114719999999,0:LOGE, Alter Markt 28, Wuppertal
+unknown:Ende der Sitzung 23
+unknown:Piratenbüro H24, Hirschgraben 24
+7.162903399999999,51.2611814,0:Wuppertal in Betracht kommt
+6.082642799999999,50.779246,0:Piratenbüro Aachen, Hirschgraben 24-26
+unknown:Streifenwagen zur Eigensicherung der Polizei Erfahrungen aus England/USA besorgen
+unknown:NRW:Tag_der_politischen_Arbeit_2012.1 Tag der politischen Arbeit 2012.1 Dortmund, siehe Link
+6.84992,51.29635,0:Café Oleander, Am alten Steinhaus 4, 40878 Ratingen
+6.84992,51.29635,0:Café Oleander, Am alten Steinhaus 4,40878 Ratingen
+8.9099738,52.2867071,0:Hoka Bar, Königstraße 41, 32423 Minden
+7.467608999999999,51.6957181,0:Gasthaus Suer, 59379 Selm
+6.5853417,51.3387609,0:JuLes Papp, Krefeld
+7.198239999999999,51.61677,0:Komma! Am Lohtor 2, 45657 Recklinghausen
+6.9534182,50.9628852,0:Keule, Wilhelmstr
+7.685311400000001,51.5426349,0:Unna, Schalander
+7.2082297,51.5939989,0:Komma!, Recklinghausen
+7.443409200000001,52.2815691,0:Ratsdeele, Rheine
+unknown:Südstern, Bilkerallee, 66
+6.452161599999999,51.2691562,0:[http://www.rahserhof-viersen.de/index.htm], Viersener Straße 172, Viersen
+7.5285074,51.6104829,0:Greif in Lünen
+7.5668312,51.4448257,0:der Keule in Schwerte
+unknown:LOGE (ex: WDC)
+0.2758952,50.7680653,0:Saffran's
+7.008653300000001,51.46227,0:Essen, Unperfekthaus
+unknown:NRW-Mumble  Nordrhein-Westfalen/Koordinatorenkonferenz
+unknown:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Heinrich-Heine-Platz, 40213 Düsseldorf (Stadtmitte)
+7.0614063,51.3394747,0:FLUX, Langenberger Straße 125, 42551 Velbert
+7.4556184,51.49824839999999,0:B1st Software-Factory Dortmund, Rheinlanddamm 201, 44139 Dortmund
+unknown:Kai ist entschuldigt
+
+# Thüringen
+unknown:Ricarda-Huch-Haus, Jena
+8.5388754,52.029705,0:Weltweit
+10.9505322,50.840914,0:Stadtbrauerei in Arnstadt
+unknown:Virtuell
+unknown:Virtuell und per Toter Baum
+9.162437599999999,50.6520515,0:TecloServer Hessen
+unknown:Noch unbekannt
+unknown:Westhausen bei HiBu
+unknown:Limericks
+10.7092884,50.9469188,0:Carnaby - Gotha
+11.0298799,50.98476789999999,0:Erfurt
+10.9254728,50.6843502,0:Ilmenau
+11.2371168,51.1845826,0:Johannistor
+unknown:Beratungsraum 2_14 im Löbdergraben 12 
+8.710847800000002,49.4125301,0:Rathaus
+unknown:VHS Grietgasse Jena
+unknown:Plenarsaal Rathaus
+unknown:Plenarsaal Jena
+15.538375,46.7837916,0:Quergasse
+11.3225398,50.98471199999999,0:Mon Ami in Weimar
+11.5892372,50.927054,0:Jena
+unknown:Haus Wettin
+12.0744977,50.8714865,0:Wirtshaus Commode - Clubzentrum Comma Gera - Heinrichstr. 47 - Gera
+12.0807203,50.8850706,0:Wirtschaft „Süßer Winkel“ - Marktplatz Gera
+unknown:siehe https://www.piraten-thueringen.de/node/937
+10.3235023,50.9727034,0:Cafe del Mar - Frauenberg 13 - 99817 Eisenach
+12.4360786,50.9871489,0:Brühl 7, 04600 Altenburg
+10.7022495,50.9496006,0:Buttermarkt  - Gotha
+10.4148907,50.5650162,0:Schlupfwinkel, Schwabenberg 23,Meiningen
+10.45488,50.723389,0:Rainmans Inn, Asbacher Straße 16, Schmalkalden
+11.7538634,50.7367065,0:Neustadt an der Orla
+unknown:kommt noch
+unknown:Roter Elephant
+10.4571001,51.2098649,0:Mühlhausen
+11.5155495,51.0260095,0:Gaststätte "Schlachthof", Buttstädter-Str.28,Apolda
+12.4366572,50.9931202,0:Altenburg
+unknown:Ratskeller, Markt 1, Saalfeld - Zimmer Filzlaus
+12.2077126,50.6585555,0:Café Lebensart am Burgplatz 12 in Greiz
+10.79169,51.50378,0:"Zum Stepel", Kranichstraße 11b, Nordhausen
+11.1709899,50.3601821,0:Künstlerstübchen in Sonneberg
+10.32179,50.97853,0:Irish Pub O'Tooles in Eisenach, Goethestr. 25. Eisenach
+11.0298799,50.98476789999999,0:Roter Elephant in Erfurt
+10.6950919,50.9444392,0:Carnaby, 18.-März-Straße 24, Gotha
+unknown:Künstlerstübchen im Gesellschaftshaus, Charlottenstr. , Sonnenberg
+11.0261851,50.9754314,0:Kunsthaus Erfurt, Michaelisstraße 34, 99084 Erfurt
+10.9156415,50.6857658,0:Altmarktschenke,Kirchplatz 3, Ilmenau
+12.4360786,50.9871489,0:Sportsbar "Brühl7", Brühl 7, Altenburg
+11.5155495,51.0260095,0:Gaststätte "Schlachthof", Buttstädter-Str.28 Apolda
+unknown:Treff- und Startpunkt auf dem Anger
+10.316626,50.9759387,0:Augustiner Bräu, Georgenstr. 30, 99817 Eisenach
+unknown:„Roter Elephant“ in Erfurt gegenüber der „Engelsburg“
+10.9254728,50.6843502,0:Piano Ilmenau
+unknown:Am Löbdergraben Bürgerhaus
+unknown:Künstlerstübchen im Gesellschaftshaus
+16.8309285,47.7424487,0:Quergasse 1
+10.316626,50.9759387,0:Eisenach, Georgenstrasse 30
+unknown:Schellhorns Restaurant & Bar, Ritterstraße 3/5, Arnstadt
+11.0298799,50.98476789999999,0:Erfurt-Schmira, Bürgerhaus
+11.5155495,51.0260095,0:"Schlachthof" Buttstädter-str.28 Apolda
+10.1972996,50.8147892,0:Bad Salzungen, Salzunger Strasse 71
