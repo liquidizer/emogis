@@ -5,6 +5,13 @@ unknown:versch. Orte
 unknown:Wahllokal vor Ort
 unknown:folgt
 unknown:Location unbekannt
+unknown:Virtuell
+unknown:Virtuell und per Toter Baum
+unknown:TecloServer Hessen
+unknown:TelcoServer Hessen
+unknown:Noch unbekannt
+unknown:kommt noch
+unknown:Wird noch bekanntgegeben
 
 # Cached queries
 13.4307435,52.4819051,0:Sandmann, Erlanger Str. / Reuterstraße
@@ -41,7 +48,7 @@ unknown:Location unbekannt
 11.5436147,48.1195972,0:Pschorr-Krug, Oberländer Str. 32, München
 11.0742426,49.4474276,0:Nürnberg, Frauentormauer 42, Nürnberg
 13.4283200,52.4925200,0:Kinski-Club, Friedelstraße 28, Neukölln
-13.413180,52.552980,0:bei Faxe, Schönhauser Straße 16
+13.38709,52.59705,0:bei Faxe, Schönhauser Straße 16
 11.4257541,48.7665351,0:Ingolstadt, LeonardisMünchener Straße 4985051 Ingolstadt
 10.9657835,50.2611698,0:Collins Coburg, Unterer Bürglaß 14, 96450 Coburg
 11.3538900,49.3858900,0:Altdorf, Sport Bavaria, Obere Wehd 1, Altdorf
@@ -212,7 +219,7 @@ unknown:Zum Fliegenden Holländer
 13.072691,52.3941887,0:zeitnah unter http://piraten-potsdam.de
 13.1224219,52.386618,0:Stadtgeschäftsstelle (August-Bebel-Str. 68, 14482 Potsdam)
 13.5889014,52.6784832,0:PiPaTa Bernau Brauerstrasse 8-10 16321 Bernau
-9.1679281,48.7778639,0:am Berliner Hauptbahnhof
+13.3683981,52.525219,0:am Berliner Hauptbahnhof
 13.072691,52.3941887,0:Café Alex; Platz der Einheit in Potsdam
 13.8777546,52.5659128,0:Strausberg, Restaurant "Zur Fähre"
 unknown:Letschin, Bistro ISTANBULL
@@ -379,9 +386,8 @@ unknown:Südstern, Bilkerallee, 66
 7.5285074,51.6104829,0:Greif in Lünen
 7.5668312,51.4448257,0:der Keule in Schwerte
 unknown:LOGE (ex: WDC)
-0.2758952,50.7680653,0:Saffran's
+11.5843355,48.1668929,0:Saffran's
 7.008653300000001,51.46227,0:Essen, Unperfekthaus
-unknown:NRW-Mumble  Nordrhein-Westfalen/Koordinatorenkonferenz
 unknown:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Heinrich-Heine-Platz, 40213 Düsseldorf (Stadtmitte)
 7.0614063,51.3394747,0:FLUX, Langenberger Straße 125, 42551 Velbert
 7.4556184,51.49824839999999,0:B1st Software-Factory Dortmund, Rheinlanddamm 201, 44139 Dortmund
@@ -391,10 +397,6 @@ unknown:Kai ist entschuldigt
 unknown:Ricarda-Huch-Haus, Jena
 8.5388754,52.029705,0:Weltweit
 10.9505322,50.840914,0:Stadtbrauerei in Arnstadt
-unknown:Virtuell
-unknown:Virtuell und per Toter Baum
-9.162437599999999,50.6520515,0:TecloServer Hessen
-unknown:Noch unbekannt
 unknown:Westhausen bei HiBu
 unknown:Limericks
 10.7092884,50.9469188,0:Carnaby - Gotha
@@ -406,7 +408,7 @@ unknown:Beratungsraum 2_14 im Löbdergraben 12
 unknown:VHS Grietgasse Jena
 unknown:Plenarsaal Rathaus
 unknown:Plenarsaal Jena
-15.538375,46.7837916,0:Quergasse
+11.5802449,50.9298145,0:Quergasse
 11.3225398,50.98471199999999,0:Mon Ami in Weimar
 11.5892372,50.927054,0:Jena
 unknown:Haus Wettin
@@ -419,7 +421,6 @@ unknown:siehe https://www.piraten-thueringen.de/node/937
 10.4148907,50.5650162,0:Schlupfwinkel, Schwabenberg 23,Meiningen
 10.45488,50.723389,0:Rainmans Inn, Asbacher Straße 16, Schmalkalden
 11.7538634,50.7367065,0:Neustadt an der Orla
-unknown:kommt noch
 unknown:Roter Elephant
 10.4571001,51.2098649,0:Mühlhausen
 11.5155495,51.0260095,0:Gaststätte "Schlachthof", Buttstädter-Str.28,Apolda
@@ -442,9 +443,580 @@ unknown:„Roter Elephant“ in Erfurt gegenüber der „Engelsburg“
 10.9254728,50.6843502,0:Piano Ilmenau
 unknown:Am Löbdergraben Bürgerhaus
 unknown:Künstlerstübchen im Gesellschaftshaus
-16.8309285,47.7424487,0:Quergasse 1
+11.5802449,50.9298145,0:Quergasse 1
 10.316626,50.9759387,0:Eisenach, Georgenstrasse 30
 unknown:Schellhorns Restaurant & Bar, Ritterstraße 3/5, Arnstadt
 11.0298799,50.98476789999999,0:Erfurt-Schmira, Bürgerhaus
 11.5155495,51.0260095,0:"Schlachthof" Buttstädter-str.28 Apolda
 10.1972996,50.8147892,0:Bad Salzungen, Salzunger Strasse 71
+11.35902,50.64791,0:Gasthaus Alte Post
+
+# Bremen
+unknown:In ganz Thüringen
+11.0298799,50.98476789999999,0:Witshaus Christoffel Erfurt
+unknown:Theatercafe in Jena
+-0.5631659999999999,47.478419,0:Anger
+8.7761592,50.0825186,0:Stadthalle in Offenbach am Main
+unknown:Stadtgarten Erfurt
+11.366826,48.13068,0:Stadthalle Germering
+11.6092642,50.88596399999999,0:Lobeda-Kaufland 
+11.030161,50.9658378,0:GEW, Erfurt, Heinrich-Mann-Straße
+11.0298799,50.98476789999999,0:Patrick´s Pub, Erfurt
+11.5155495,51.0260095,0:"Schlachthof" Apolda, Buttstädter-Str.28, Apolda
+11.3225398,50.98471199999999,0:Monami kleiner -  Saal/EG - Weimar
+11.36127,50.64753,0:Ratskeller, Markt 1, Saalfeld
+11.1768,50.36298,0:Künstlerstübchen, Charlottenstr. 5 , Sonneberg
+8.6898,50.02081,0:Ricarda-Huch-Haus
+10.9164625,50.6875255,0: "Piano", Weimarer Str. 9, Ilmenau
+10.4148907,50.5650162,0:Schlupfwinkel, Schwabenberg 23, Meiningen
+12.08504,50.8776119,0:Raum "Kleine Buga", Obergeschoß, im "Bürgertreff" Steinweg 8, 07545 Gera
+11.0298799,50.98476789999999,0:Vereinsgaststätte Peterborn e.V. Erfurt
+10.7027038,50.9492762,0:S´Limericks, Buttermarkt 5, Gotha
+12.2000599,50.6561063,0:Café LebensArt in Greiz ( Unteres Schloss, Burgplatz 12) 
+unknown:Embassy of Arcadia im ACC
+unknown:SOS Kinderdorf Fr.-Ebert-Str.
+unknown:Schule Regensburger Str. Mensa
+unknown:Bibliothek in der Grundschule Admiralstraße
+unknown:SOS Kinderdorf Cafe, Friedrich-Ebert-Str.
+unknown:Martin-Luther-Gemeinde, Neukirchstraße 86, Raum 2.
+unknown:Martin-Luther-Gemeinde, Raum 2, Neukirchstraße 86.
+unknown:Jugendzentrum Findorff, Neukichstr. 23
+unknown:Gothaer Straße 60, Mensa (Zugang über Schulhof Regensburger Straße).
+unknown:Villa Rutenberg, Am Dobben 91
+unknown:Ortsamt ÖV, Am Dobben 91
+unknown:Villa Rutenberg / Orstamt Mitte
+unknown:Villa Rutenberg - Am Dobben 91
+unknown:Jugendherberge Kalkstrasse 6
+unknown:Ortsamt Mitte , Villa Rutenberg
+unknown:Ortsamt Mitte / Östliche Vorstadt
+unknown:OA Mitte / Östl. Vorstadt Am Dobben 91
+unknown:Jugendherberge , Kalkstrasse 6
+unknown:Ortsamt Mitte / Östliche Vorstadt Villa Rutenberg
+unknown:Schulzentrum Ronzelenstr., Aula
+unknown:Ort wird noch bekannt gegeben.
+unknown:Oberschule Findorff, Lehrerzimmer, Gothaer Straße 60
+unknown:Messehalle 7, 1OG Tagungsraum
+unknown:Jugenzentrum Findorff, Neukirchstr. 23a
+11.3480912,48.3059615,0:Grundschule Augsburger Str 175.
+unknown:SOS Kinderdorf, Friedrich-Ebert-Straße 105, 28199 Bremen Sitzungssaal
+unknown:im Jugendzentrum Findorff, Neukirchstr. 23a
+unknown:Kubo / Beim Paulskloster
+unknown:in der Aula Schule Lessingstraße, Eingang St.-Jürgen-Str..
+unknown:Bremische Bürgerschaft
+8.5660853,53.1901217,0:Schulzentrum Eggestedter Straße, 28779 Bremen
+8.7867927,53.1004583,0:Ortsamt West, Walle Center, Waller Heerstraße 99, 28219 Bremen
+unknown:Haus der Bürgerschaft, Sitzungsraum 2
+8.9032567,50.5597799,0:Raum 301 B+C
+8.90282,50.55977000000001,0:Raum 2
+8.90354,50.55976,0:Raum 1
+8.9032567,50.5597799,0:Raum 301 A-C
+8.9032567,50.5597799,0:Raum 301 C
+unknown:Sitzungsraum 416, Börsenhof A
+8.8306,53.03205999999999,0:Bürgerhaus Gemeinschaftszentrum Obervieland, Alfred-Faust-Straße 4, 28279 Bremen 
+8.9032567,50.5597799,0:Raum 301 B-C
+8.5882943,53.489133,0:Alte Luneschleuse
+unknown:Sitzungsraum III
+16.3698864,48.19891459999999,0:Festsaal
+8.9032567,50.5597799,0:Raum 301 b/c
+8.8208279,53.0847558,0:Congress Centrum Bremen
+8.738669999999999,53.05227,0:Ortsamt Huchting, Franz-Löbert-Platz 1, 28259 Bremen
+unknown:Treffpunkt ist Deichbruchstraße 14
+unknown:Präsidentenzimmer
+8.767180000000002,53.08308,0:Gemeindesaal der Evangelischen Kirchengemeinde der Christuskirche in Woltmershausen, Woltmershauser Straße 376
+8.8208279,53.0847558,0:Congress Zentrum Bremen
+unknown:Sitzungsraum II
+unknown:Plenarsaal
+unknown:Sitzungsraum 301 C
+8.9032567,50.5597799,0:Raum 416
+13.35755,52.5075,0:Landesvertretung der Freien Hansestadt Bremen beim Bund, Hiroshimastraße 24, 10785 Berlin
+8.9032567,50.5597799,0:Raum 301 a/c
+unknown:Sitzungsraum 416
+8.809609,53.072533,0:im Bremer Schnoor
+8.8500947,52.9825838,0:Bremer Marktplatz
+8.5833333,53.55,0:in den Räumen der Volkshochschule in Bremerhaven
+unknown:Sitzungsraum I
+8.885909999999999,53.07637,0:Ortsamt Schwachhausen/Vahr, Wilhelm-Leuschner-Straße 27a, 28329 Bremen
+unknown:Sparkasse am Brill
+8.884423,53.0655485,0:Am Sacksdamm
+unknown:Martinianleger und Domshof
+8.6367386,53.53785999999999,0:im Klinikum Bremerhaven Reinkenheide
+9.181758799999999,48.7754181,0:in Stuttgart
+8.615729300000002,53.17189330000001,0:Ortsamt Vegesack, Weserstraße 75, 28757 Bremen
+unknown:Vereinsheim TV Eiche Horn, Berckstr. 87
+unknown:Gräber- und Gedenkstätte in Riga-Bikernieki
+unknown:Eingangshalle
+8.8166034,53.0861826,0:Bremen-Arena
+unknown:Geschäftsstelle im Weser Stadion, Franz Böhmert-Straße 1 B, Turm 2 
+8.5833333,53.55,0:im EUROTOP (Gatehouse I, Raum Bremerhaven), Bremerhaven
+-64.4779496,44.1818306,0:Geeren 41
+8.7709849,53.0942952,0:Am Waller Freihafen 1
+8.8223361,53.0777327,0:Eduard-Grunow-Straße 30
+8.80058,53.08047999999999,0:Abbentorstraße 5
+8.8044917,53.0838997,0:Bremische Bürgerschaft, Am Markt 20, 28195 Bremen
+unknown:Theater am Goetheplatz
+8.841669999999999,53.0830859,0:Schwachhauser Heerstraße 111-113 
+unknown:Schule Drebberstraße
+unknown:Präsidentenzimmer, HdB
+unknown:Atlantic Grand Hotel, Bredenstraße
+unknown:Mittelhalle, HdB
+unknown:Theater am Goetheplatz 
+8.957231,53.047763,0:Weserpark Bremen
+unknown:Sitzungsraum 301 B+C
+12.13984,49.63318,0:Rathaus, Obere Halle
+unknown:Sportanlage Fritzewiese 
+unknown:Martin Luther Gemeinde, Eickedorfer Str.
+11.9127814,50.3135391,0:Hof Stackkamp, Stackkamp 1
+unknown:Bremenhalle, Flughafenallee 20
+unknown:auf dem Hanseatenhof
+unknown:Oberneulander Kirche 
+8.90282,50.55977000000001,0:Raum II
+unknown:bremenports GmbH, Am Strom 2, 27568 Bremerhaven, in Raum „Weser“ in der 12. Etage
+unknown:Finanzcentrum am Brill
+unknown:Bremische Bürgerschaft, Präsidentenzimmer
+unknown:Bremische Bürgerschaft, Festsaal
+unknown:Am Markt direkt bei den Stadtmusikanten (bei Regenwetter Haus der Bürgerschaft, Raum I) 
+unknown:Börsenhof A, Raum 301 B+C
+unknown:Strandlust Vegesack
+8.8166034,53.0861826,0:Bremen Arena
+unknown:Glocke am Dom
+unknown:Bremische Bürgerschaft, Börsenhof A, 4. Etage, Raum 416, Eingang Marktstraße
+unknown:Vor der Bremischen Bürgerschaft
+8.57741,53.53997,0:Deutsches Schifffahrtsmuseum Bremerhaven
+1.4469978,47.1455207,0:Roland-Center
+8.8208279,53.0847558,0:St. Johannis-Schule in Bremen
+8.8652297,53.06252,0:Hastedter Osterdeich
+unknown:Galerie des Theaters am Goetheplatz
+6.164533899999999,50.7491875,0:Roland auf dem Marktplatz
+unknown:Haus der Bürgerschaft
+unknown:Haus der Bürgerschaft, Festsaal
+unknown:Obere Halle des Rathauses
+8.8443349,51.38934339999999,0:Glocke
+8.841046,53.081441,0:Kurfürstenallee 8
+unknown:Konzerthaus Die Glocke
+unknown:Festsaal der Bremischen Bürgerschaft
+unknown:Haus der Bürgerschaft, Präsidentenzimmer
+unknown:An der Waterfront
+unknown:Jüdischer Friedhof in Bremen-Hastedt
+8.80661,53.07624,0:Rathaus Bremen
+8.920677699999999,53.06571719999999,0:Osterholzer Friedhof
+9.451469999999999,53.95758,0:Haferkamp 8
+unknown:Obere Rathaushalle
+unknown:Am Fallturm (Maschinenhalle)
+8.815249999999999,53.07511,0:Contrescarpe 22/24
+10.2608469,53.72932580000001,0:Am Markt
+8.9032567,50.5597799,0:Raum 401
+unknown:Bremer Weihnachtsmarkt
+-114.2653142,42.9093508,0:Dietrich-Wilkens-Straße 8
+unknown:Haus der Bürgerschaft, Foyer
+unknown:Kirche Unser Lieben Frauen
+unknown:Atlantic Hotel Sail City, Bremerhaven
+8.80109,53.0773,0:Schlachte 26
+9.5692252,54.5132066,0:St. Petri Dom
+10.6687365,53.6991492,0:Behlendorf
+8.8777014,53.08030979999999,0:In der Vahr 75
+8.811336299999999,53.08030979999999,0:Herdentorsteinweg
+unknown:Mühlengelände, Arberger Heerstraße 90
+8.95338,53.07132,0:Schulzentrum Sebaldsbrück
+unknown:Universität Bremen, Sportturm
+unknown:Haus der Bürgerschaft, Plenarsaal.
+unknown:Haus der Bürgerschaft, Festsaal.
+unknown:Pflegeheim Christopher-Haus II, -Bremen Nord.
+unknown:Bahnhofsmission, Hauptbahnhof
+8.6821267,50.1109221,0:Frankfurt am Main
+8.5833333,53.55,0:Stadthalle Bremerhaven
+8.863606599999999,53.0907894,0:Focke-Museum, Schwachhauser Heerstraße 240, Bremen
+unknown:Deutsches Haus, Am Markt 1
+unknown:Börsenhof A, Raum 301 B/C
+unknown:Geschäftsstelle Violenstraße
+unknown:Scharnhorst-Kaserne, Niedersachsendamm 67
+unknown:Florartrium
+8.81007,53.08198,0:Breitenweg 12
+unknown:im Frauenzimmer der Inneren Mission, Abbentorstr. 5
+unknown:Mehrzweckraum des Wasser- und Schifffahrtsamtes Bremen auf dem Weserwehr
+unknown:Bremer Theater
+9.19614,50.57436,0:Ohmstr. 3
+unknown:Sitzungsraum 301 A
+unknown:Sitzungsraum 301 B
+unknown:BSAG-Halle
+8.957231,53.047763,0:Weserpark
+8.586062499999999,53.56001,0:Hafenstr. 140, Bremerhaven
+unknown:Flughafen Bremen GmbH, Flughafenallee 21
+8.86854,53.06422,0:Drakenburger Str. 42
+9.081439999999999,52.1909,0:Ratskeller
+unknown:Villa Ichon, Goetheplatz 4
+8.8069002,53.0748972,0:Handelskammer
+9.9014838,46.4954478,0:Parkhotel
+8.771257799999999,53.0958771,0:Speicher XI
+unknown:Nachbarschaftshaus Ohlenhof
+unknown:Kulturkirche St. Stephani
+8.814843999999999,53.07296400000001,0:Wilhelm Wagenfeld Haus, Am Wall 209
+unknown:Sitzungsraum 401
+8.8226548,53.0774598,0:belladonna, Sonnenstraße 8
+unknown:Bürgerhaus Vegesack, Kirchheide 49
+unknown:Parks an der Oberneulander Kirche
+unknown:Geschäftsstelle des Bremer Turnverband, Violenstraße
+8.8069002,53.0748972,0:Club zu Bremen, Am Markt 13
+unknown:Kirche Unser Lieben Frauen 
+unknown:hkk-Geschäftsstelle/Martinistraße 24
+unknown:bremensports GmbH, Am Strom 2, 27568 Bremerhaven, Raum "Weser", 12. Etage
+8.5565817,53.1954342,0:Blumenthal, Ermlandstraße
+8.7513255,53.0927988,0:Rablinghauser Landstraße 51a-e
+unknown:Riverboat/Bürgerweide
+unknown:Bundesstützpunkt RSG/Badgasteiner Straße
+8.8134781,53.0909354,0:Torfhafen Findorff
+8.910338699999999,53.08851,0:Achterdiekpark
+8.5833333,53.55,0:Bürgermeister-Smidt-Gedächtniskirche, Bremerhaven
+6.7986346,51.2358752,0:Galerie im Medienhaven, Humboldtstraße 6
+unknown:Waldau Theater, Waller Heerstr. 165
+8.5081546,53.2176816,0:Bremen-Farge, Rekumer Siel 1
+unknown:Seniorenresidenz Riensberg
+unknown:Grundschule Karl-Lerbs-Straße
+1.4469978,47.1455207,0:Roland Center
+unknown:Sporthaus Kornstraße
+unknown:FinanzCentrum der Sparkasse, Am Brill
+unknown:Bürgerzentrum Neue Vahr, Berliner Freiheit 10
+8.836646199999999,53.0288968,0:Egon-Kähler-Str. 31
+unknown:BLG-Forum
+8.8874588,53.05846,0:Godehardstraße, Hemelingen
+8.5964299,53.5056618,0:Bezirkssportanlage Heinrich-Kappelmann-Straße, Bremerhaven
+8.5833333,53.55,0:Stadttheater Bremerhaven
+unknown:Hotel "Strandlust", Bremen-Vegesack
+6.5625884,50.6723819,0:Gut Hodenberg
+8.9127926,53.1153766,0:Rethfeldsfleet 9a
+unknown:Neues Schauspielhaus
+unknown:Seniorenheim Ellener Hof, Ludwig-Roselius-Allee 183
+unknown:"Haus am Meer", Bad Zwischenahn
+unknown:Marinefliegerhorst Kiel-Holtenau
+8.8871637,53.0561449,0:Christernstr. 16
+8.804181699999999,53.069532,0:Werdersee
+8.920677699999999,53.06571719999999,0:Osterholzer Friedhof, Feld K
+8.82843,53.06267,0:Lidice-Haus, Weg zum Krähenberg 33a
+8.6151381,53.1712874,0:Vegesacker Stadtgarten
+8.8184,53.07966,0:Landesverband Bremen, Rembertistraße 28
+unknown:Probsteikirche St. Johann
+unknown:Willehadsaal der Alten Post, Domsheide
+unknown:Börsenhof A
+unknown:Atlantic Hotel, Bredenstraße
+7.5913415,47.5537541,0:Kunsthalle
+11.22246,52.02496,0:Sporthalle am Jacobsberg
+8.793099999999999,53.06103,0:Familie Funke, Gustav-Freytag-Str. 57, 28201 Bremen
+unknown:Waldau Theater, Waller Heerstr. 165 
+-0.3796995,51.5040906,0:Geeren 41/43 
+unknown:Knoops Park, Am Bahnhof St. Magnus
+11.9127814,50.3135391,0:Hof Stackkamp, Stackkamp 1 
+unknown:Weser Tower, Am Weser-Terminal 1
+unknown:Goldener Saal, Atlantic Grand Hotel
+unknown:BTV-Geschäftsstelle, Violenstraße
+16.9117816,47.70435029999999,0:Marktplatz
+13.2585107,52.7631668,0:Straße der Nationen, Oranienburg
+8.8208279,53.0847558,0:Karstadt Bremen
+8.8040291,53.0787451,0:Hanseatenhof
+unknown:Börsenhof A, Dieter-Klink-Platz
+unknown:Sitzungsraum 301 B-C
+10.46094,51.20117,0:Martinistraße 24
+11.6344108,52.1240548,0:Dom
+unknown:Strandlust Bremen-Vegesack, Rohrstraße 1
+12.00726,51.41814,0:Halle 9, Baumschulenweg 8/10
+9.4947584,51.3188913,0:Bundesgeschäftsstelle, Werner-Hilpert Straße 2, Kassel
+unknown:Bremische Bürgerschaft, Raum 301 B/C
+unknown:Goldener Saal des Atlantic Grand Hotel
+13.4068179,52.5195766,0:Neptunbrunnen
+unknown:Festsaal im Haus der Bürgerschaft
+unknown:Sitzungsraum 1
+8.814843999999999,53.07296400000001,0:Wagenfeld-Haus
+unknown:Sitzungsraum 2
+unknown:Landhaus Am Rüten
+13.40629,52.524268,0:NH Hotel Berlin-Mitte, Leipziger Straße 106-111, Berlin
+unknown:Börsenhof A,Raum 416
+10.7884786,51.83248450000001,0:Liebfrauenkirchhof
+unknown:Raum 3, Bremische Bürgerschaft
+unknown:Bremer Presseclub, Schnoor
+8.009876499999999,53.1814401,0:Bad Zwischenahn
+unknown:Kirche Unser Lieben Frauen, Christophorussaal
+6.9611,51.42899999999999,0:Humboldtstraße 179
+unknown:Johann-Friedrich-Walte-Straße 2
+unknown:Altes Fundamt (Auf der Kuhlen 1) 
+unknown:Die Glocke
+8.899042999999999,53.05225300000001,0:Ortsamt Hemelingen
+8.57796,53.53798,0:bremenports, Sail City, Am Strom 2, 27568 Bremerhaven
+unknown:Börsenhof A, Raum 416
+unknown:ÖVB-Arena
+unknown:DGB-Haus
+unknown:ÖVB Arena
+unknown:Swissotel, Hillmannplatz 20
+unknown:Haus der Bürgerschaft, Raum II
+unknown:Börsenhof A, Raum 301 B-C
+8.93427,53.05928,0:Osterholzer Heerstraße 100
+unknown:Gewerbehaus, Ansgaritorstr. 24 
+unknown:Universität, GW1 HS
+unknown:Auferstehungsgemeinde, Drakenburger Straße
+unknown:Bremische Bürgerschaft, Plenarsaal
+unknown:Zentrum für Medien Nord, Am Sedanplatz 5
+unknown:HdB, Raum II
+unknown:Schulzentrum Amersfoorter Straße 
+unknown:Geschäftsstelle Violenstraße 27 
+8.8586604,53.0951706,0:Riensberger Friedhof
+8.834920499999999,53.2796695,0:Stiftungsdorf Osterholz
+8.8012952,53.08452819999999,0:Daniel-von-Büren Str. 15
+unknown:Nordwestradio
+8.957231,53.047763,0:Cafe del Sol, Nähe Weserpark, Bremen-Osterholz
+8.5835172,53.5583256,0:die theo - Aula "Storm Deel", Lutherstraße 7, 27576 Bremerhaven
+unknown:Ortsamt Östl. Vorstadt, Am Dobben 91
+unknown:Bürgerhaus Weserterrassen, Osterdeich 70 b
+unknown:Paradox, Bernhardstr. 10-12
+unknown:Ortsamt Östl. Vorstadt
+unknown:Ortsamt Bremen Mitte / Östliche Vorstadt Villa Rutenberg
+unknown:AFZ Berufsschulzentrum / Block B
+unknown:AFZ Berufgschulzentrum Block B
+unknown:Ortsam Bremen Mitte / Östliche Vorstadt  Villa Rutenberg
+8.79274,53.1001,0:Grundschule am Pulverberg, Schleswiger Str. 10
+unknown:Sitzungssaal des Ortsamtes, Berckstr.
+8.87567,53.09523,0:Aula der Oberschule Ronzelenstraße, Ronzelenstr. 51, 28359 Bremen
+unknown:Ortsamt Mitte/Östl. Vorstadt, Am Dobben 91
+8.82307,53.07449,0:Ortsamt, Am Dobben 91, Bremen
+unknown:Ortsamt Mitte , Villa Ruthenberg
+unknown:Grundschule Am Weidedamm, Lehrerzimmer, Am Weidedamm 20.
+unknown:Vereinshaus Findorff, Hemmstraße 240.
+unknown:Gemeindesaal der Martin-Luther-Gemeinde, Neukirchstraße 86.
+unknown:Gewerkschaftshaus, Bahnhofsplatz
+unknown:Rathaus – Festsaal
+unknown:ab Domsheide mit dem Straßenbahn-Sonderzug 
+unknown:Restaurant Jürgenshof
+unknown:Phillipsfield am Stadthaus 6 
+unknown:Sportanlage Hohweg
+8.818781,53.036342,0:Klinikum Links der Weser
+unknown:Stiftungsdorf Gröpelingen
+8.8126672,53.0734805,0:Zentralbibliothek, Am Wall 201
+8.8208279,53.0847558,0:FinanzCentrum der Sparkasse Bremen
+unknown:Große Trauerhalle des Osterholzer Friedhofs
+8.8117988,53.0894342,0:Messe Bremen
+unknown:Bremische Bürgerschaft, Raum III
+8.790084499999999,53.2277076,0:Logistik-Schule, Lucius-D.Clay-Kaserne, Osterholz-Scharmbeck 
+unknown:in der Scharnhorst-Kaserne, Niedersachsendamm 67/69 
+unknown:Bremische Bürgerschaft, Börsenhof A, Raum 301 B/C
+unknown:Start am Marcusbrunnen im Bürgerpark
+13.4861111,52.465,0:Vereinsgelände am Baumschulenweg 
+unknown:Stadtwaage, Langenstraße 
+unknown:Haus der Bürgerschaft, Eingangshalle
+8.8705879,53.09438710000001,0:Horner Heerstraße
+8.8964742,53.0418089,0:Ortsamt Hemelingen, KUBIKO, Godehadstraße 19, 28309 Bremen
+unknown:Mahnmal in der Dechanantstraße
+unknown:Ostkrypta im St. Petri-Dom
+8.809949999999999,53.07571,0:Commerzbank Bremen, Domshof 8-9
+8.79522,53.0888,0:Meta-Sattler-Straße 33
+unknown:Strandlust in Vegesack
+unknown:Treffpunkt Waldbühne
+unknown:Rathaus, Festsaal
+8.8289434,53.0805338,0:Schwachhauser Heerstraße 26-28
+unknown:Ortsamt, Osterholzer Heerstraße 100
+unknown:Schwankhalle, Buntentorsteinweg 112
+8.8027756,53.078732,0:Gewerbehaus, - Ansgaritorstrasse 24 - Bremen
+8.241376899999999,50.0823738,0:Landtag
+unknown:Bremische Bürgerschaft, - Festsaal
+unknown:Haus Schütting
+unknown:Börsenhof A, Raum 301 A
+unknown:Bürgerschaft der Freien und Hansestadt Hamburg
+9.994622,53.556866,0:Hamburg
+unknown:Commerzbank am Domshof
+8.8208279,53.0847558,0:Bremen Arena, Halle 7
+9.5692252,54.5132066,0:St. Petri-Dom
+unknown:Scharnhorst-Kaserne, Niedersachsendamm 67/69
+unknown:Senator für Inneres und Sport, Blauer Salon, Contrescarpe 22/24
+8.8394009,53.0720543,0:Am Schwarzen Meer 101-105
+unknown:Senatssaal, Rathaus
+unknown:Brillissimo, Am Brill
+unknown:Vereinsgaststätte Richard-Jürgens-Weg 40
+8.7651025,53.0619728,0:Bremen Grolland/Am Vorfeld 22
+unknown:Stadtwaage/Langenstraße 13
+unknown:Cinemaxx/Breitenweg 27
+10.7994177,53.9035186,0:Dockstraße 20
+unknown:ASB-Haus am Osterdeich 136
+8.873835399999999,53.08394670000001,0:Bürgermeister-Spitta-Allee 47
+8.8093311,53.0766113,0:Domshof
+8.62378,53.16892,0:KITO, Alte Hafenstr. 30, Bremen-Vegesack
+unknown:Vereinsgaststätte „Domkieker“, Zum Sporthafen Hemelingen 8
+unknown:Stadtwaage, Langenstr. 13
+unknown:Bewegungsgarten, Am Forst 1
+8.1290502,49.8126821,0:vor dem Rathaus
+unknown:Kleiner Saal der Glocke
+unknown:Martini-Anleger, Domshof, Atlantic Grand Hotel
+unknown:Grothenn’s Gasthaus, Arberger Heerstr. 101
+unknown:Rotkuhle, Arberger Heerstraße 37
+unknown:Gustav-Heinemann-Bürgerhaus, Kirchheide 25
+unknown:Uni-Sportturm, Badgasteiner Straße
+unknown:Henschenbusch
+unknown:Kulturkirche St. Stephani 
+unknown:ÖVB Arena 
+7.1047327,50.7116826,0:Hotel Königshof, Bonn 
+11.9127814,50.3135391,0:Forum Ellener Hof
+unknown:Sporthalle Amersfoorter Straße
+11.9054667,52.1929621,0:Bürgerstraße 1
+unknown:Landesinstitut für Schule, Am Weidedamm
+8.78436,53.22934,0:St. Willehadi-Kirche, Osterholz-Scharmbeck, Kirchenstr. 9
+-76.9950921,-11.9598076,0:Club zu Bremen
+unknown:Seekamp’s Gasthaus Centralhallen, Hemelinger Heerstr. 27
+8.807312,53.07588699999999,0:Haus der Bürgerschaft, Am Markt 20, 28195 Bremen
+8.7706508,53.1060551,0:Waller Friedhof
+8.79194,53.08826999999999,0:Begegnungsstätte Haferkamp der Stadtgemeinde Bremen (Haferkamp 8)
+unknown:Auferstehungsgemeinde (Drakenburger Straße)    
+unknown:Landheim Walle, Fleetstr. 61
+-2.624924,48.097772,0:Foyer
+5.5431225,51.2502586,0:Stadtwaage
+unknown:Hotel Robben, Grollander Krug, Emslandstraße 30
+unknown:SPD-Fraktionsbüro
+8.9032567,50.5597799,0:Raum 301
+unknown:Konsul-Hackfeld-Haus, Birkenstraße 34
+8.8208279,53.0847558,0:Congress-Centrum Bremen
+unknown:Havanna-Lounge
+unknown:Haus der Wissenschaft, Sandstr. 4/5
+13.3943685,52.522005,0:Kaiser Friedrich
+unknown:Geschäftsstelle Rembertiring 19
+unknown:„Bremer Süden“, Alfred-Faust-Str. 115
+unknown:Seniorenzentrum am Oslebshauser Park
+unknown:Präsidentenzimmer in der Bremischen Bürgerschaft
+unknown:Raum I in der Bremischen Bürgerschaft
+unknown:Schwankhalle, Buntentorsteinweg
+
+# MV
+10.9254728,50.6843502,0:Parkcafe Ilmenau
+11.036353,50.975886,0:Anger, Erfurt
+10.7092884,50.9469188,0:S'Limerick Gotha
+10.9254728,50.6843502,0:„Nasse Post“ Ilmenau
+unknown:Milchbar in der Lindenstraße
+9.95934,53.56124,0:Lippmannstraße 57, Hamburg
+13.3923414,54.08654629999999,0:Greifswald, Das Sofa
+12.119186,54.093367,0:Restaurant Lenks, Warnowufer 59, 18057 Rostock, Germany
+11.4128898,53.6324347,0:Buntes Q, Schwerin
+11.40971,53.64091999999999,0:bei Jagau klingeln, Heinrich Seidel Strasse 5, 19055 Schwerin
+11.41999,53.63216,0:Freischütz, Ziegenmarkt 11, 19055 Schwerin
+11.4177,53.63046000000001,0:Alte Münze, Münzstraße 21, 19055 Schwerin
+13.3923414,54.08654629999999,0:Das Sofa, Greifswald
+11.4128898,53.6324347,0:Freischütz, Schwerin
+unknown:Dieters, Stadt
+12.1058668,54.09010379999999,0:Lenk's Restaurant-BackBar-CafénLenk's Restaurant-BackBar-Café, Warnowufer 59, in den Hafenterrassen, 18057 Rostock
+12.1004289,54.0834186,0:Helgas Kitchen, Rostock
+12.1004289,54.0834186,0:Kabutzenhof / höhe Max-Plank-Institut / am Wasser, Rostock
+12.1254046,54.0851766,0:Helgas Kitchen, Am Vögenteich 19, Rostock
+12.1004289,54.0834186,0:Helgas Kitchen,Rostock
+12.1004289,54.0834186,0:La Casa de Cuba, Rostock
+12.1004289,54.0834186,0:Rostock, La Casa de Cuba
+12.1199,54.07018,0:Werkstattschule, Pawlowstraße 16, Rostock
+12.1004289,54.0834186,0:Rostock
+unknown:Cafè Lom
+12.1004289,54.0834186,0:Rostock / La Casa de Cuba
+13.263159,53.55896869999999,0:Torcafe im Friedländer Tor, Friedländer Strasse, 17033 Neubrandenburg
+11.4128898,53.6324347,0:Schwerin
+13.0877143,54.2994048,0:Stralsund
+14.09461,53.67566,0:Stettiner Straße 1, 17367 Eggesin
+unknown:Restaurant "Goldener Löwe" am Alten Markt
+13.3835785,54.0956684,0:"Sofa", Brüggstraße 29, Greifswald
+12.1058668,54.09010379999999,0:Lenk's Restaurant-BackBar-CaféLenk's Restaurant-BackBar-Café, Warnowufer 59, in den Hafenterrassen, 18057 Rostock
+8.776084299999999,50.09563620000001,0:Offenbach
+11.3906689,53.637632,0:Schwerin, Sitzungssaal am Sitz der Landeswahlleiterin, Lübecker Str. 287, 19059 Schwerin
+12.1004289,54.0834186,0:Rostock, Café Lotte
+12.1198994,54.09117699999999,0:Patriotischer Weg
+12.1341152,54.0875612,0:Universitätsplatz Rostock
+12.1341152,54.0875612,0:Universitätsplatz, Rostock
+12.1076118,54.0863761,0:Ulmenstraße 69, Rostock
+13.3803558,54.0777776,0:DJH Jugendherberge Greifswald, Pestalozzistraße 11/12, 17489 Greifswald
+10.1658148,48.6628951,0:Congress Centrum Heidenheim, Hugo-Rupf-Platz 1, 89522 Heidenheim an der Brenz
+12.1076118,54.0863761,0:Ulmenstraße 69 Haus 1, Rostock
+12.0833333,54.1666667,0:Rostock, Warnemünde
+12.0833333,54.1666667,0:Rostock/Warnemünde
+12.9213697,50.827845,0:Chemnitz
+6.554698,51.197021,0:Kleinenbroich
+6.810061699999999,51.220532,0:Düsseldorf 
+13.3746958,52.50906459999999,0:Berlin, Potsdamer Platz
+9.15743,47.68893,0:Wollmatinger Halle, Schwaketenstraße 31, 78467 Konstanz
+11.012657,50.93632299999999,0:Waldhaus (Saal im ersten Stockwerk), Rhodaer Chaussee 12, 99094 Erfurt
+
+11.4666574,53.8922888,0:Hinter dem Rathaus 7, Wismar
+unknown:Bibliothek der Grundschule Admiralstraße, Winterstraße 20.
+unknown:Bremische Bürgerschaft, Sitzungsraum II
+unknown:Bremische Bürgerschaft, EuropaPunktBremen 
+unknown:Wallanlagen (Höhe Altenwall 6) 
+8.8874588,53.05846,0:Bürgerhaus Hemelingen, Godehardstraße 
+8.87014,53.062714,0:Hansa-Carré, Pfalzburger Straße
+8.9269587,53.097312,0: Oberneulander Landstraße
+unknown:Gewerbehaus, Ansgaritorstr. 24
+unknown:Universität, Gebäude GW 1 HS
+unknown:Grothenn’s Gasthof, Arberger Heerstr. 101
+unknown:Bremer Industriehaus, Schillerstr. 10
+6.4933527,51.6791727,0:Mühlenfeldstraße 16
+unknown:Mittelhalle
+unknown:Swissôtel, Hillmannplatz
+unknown:Atrium Kirche, Hohe Straße 7
+6.9278504,50.927027,0:Universität, Hörsaalgebäude, HS 2010
+8.8845802,53.0933298,0:Rhododendronpark
+unknown:„Ständige Vertretung“, Böttcherstraße 
+unknown:Atlantic Grand Hotel, Bredenstraße 2 
+unknown:Weserpark, Lichthof
+unknown:Hotel Strandlust
+unknown:BTV-Geschäftsstelle Violenstraße 
+unknown:Justizzentrum Am Wall 198, Sitzungssaal 7 
+unknown:Goldener Saal des Atlantic Grand Hotel (Haus St. Petrus, Böttcherstraße) 
+8.58865,53.54311999999999,0:Elbestr. 101 
+unknown:Arberger Dorfplatz/Ecke Heisiusstraße
+unknown:Tafelrunde in der Erzeugermarkthalle, Großmarkt, Am Waller Freihafen 1
+8.8550343,53.06476259999999,0:Hastedter Osterdeich 168b
+unknown:Senator für Inneres, Contrescarpe 22/24
+unknown:Bremische Bürgerschaft, Raum II
+11.5523045,48.1375051,0:Schwankhalle
+8.4532221,49.2361698,0:Am Markt 1
+-117.6908005,34.1084935,0:CCB
+8.8208279,53.0847558,0:Sparkasse Bremen
+unknown:ASTRIUM, Spacelab-Halle
+unknown:Haus der Bürgerschaft,Raum II
+unknown:ACHTUNG: Diese Sitzung findet im Rahmen der Arbeitstagung des Ausschusses vom 14. - 16. Mai 2012 in Brüssel statt1
+unknown:Börsenhof A, Raum B-C
+8.8938432,53.0612212,0:Sebaldstr. 3a 
+8.8069002,53.0748972,0:Schütting
+unknown:Evangelische Kirchengemeinde Arsten-Habenhausen, Kirche Simon-Petrus, Habenhauser Dorfstraße 42
+9.5692252,54.5132066,0:St.-Petri-Dom
+unknown:Bürgerhaus Weserterrassen, Osterdeich 70
+unknown:Untere Rathaushalle
+7.91517,49.85118,0:Bösenhof A, Raum 416
+8.8044917,53.0838997,0:Geschäftstelle, Daniel-von-Büren-str. 15, 28195 Bremen
+unknown:Café Lagerhaus, Schildstr. 12
+8.8138762,53.08255029999999,0:Investorengrundstück am Hauptbahnhof Bremen
+unknown:Daniel-von-Büren-Str. 15 (Geschäftsstelle)
+8.8208279,53.0847558,0:Bremen, Bahnhofsvorplatz
+8.8333333,53.0666667,0:Bürgerhaus Weserterassen, Am Osterdeich, Bremen
+unknown:Grieschens Hotel, Obernstr. 12, Achim
+9.9840158,54.0729431,0:Neumünster, Schleswig-Holstein
+unknown:Katakomben, Obernstr. 16, Achim
+unknown:Geschäftstelle
+8.6235874,53.1709524,0:Bistro Cordoba, Sagerstraße 27, 28757 Bremen
+8.5833333,53.55,0:Bremerhaven
+unknown:wird noch bekannt gegeben
+11.94022,47.39546,0:Lagerhaus
+unknown:Geschäftsstelle Daniel-von-Büren-Str. 15
+8.8012952,53.08452819999999,0:Daniel-von-Büren-Str. 15
+8.8044917,53.0838997,0:GS, Daniel-von-Büren-Str. 15, 28195 Bremen
+8.758792999999999,53.1173124,0:Helene-Kaisen-Haus, Beim Ohlenhof 10, 28239 Bremen
+10.370632,53.190967,0:Geschäftsstelle
+-36.587909,-54.429579,0:GS
+unknown:Bürgerhaus Eidelstedt
+6.581073099999999,51.0929898,0:Bahnhofsvorplatz
+unknown:Daniel-von-Büren-Str. 15 (Geschäftsstelle Piraten)
+8.8208279,53.0847558,0:vor dem Finanzamt Bremen
+unknown:Bürgerhaus Weserterrassen
+unknown:Delmestr. Ecke Pappelstr.
+8.6661941,53.04637899999999,0:Kerem Kulturkneipe, Syker Str. 190, 27751 Delmenhorst
+8.8012952,53.08452819999999,0:Daniel-von-Büren-Str. 15, 28195 Bremen
+8.8044917,53.0838997,0:Daniel-von-BÃ¼ren-Str. 15, 28195 Bremen
+unknown:ICS.LOCATION
+8.8044917,53.0838997,0:Geschäftsstelle, Daniel-von-Büren-Str. 15, 28195 Bremen
+unknown:GS Bremen Stadt - Daniel-von-Büren-Str 15
+8.053799999999999,49.94204,0:Weserhaus
+8.801806,53.08354,0:Altes Gymnasium Kleine Helle 7-8, 28195 Bremen
+8.822502,53.07198649999999,0:Kulturzentrum Lagerhaus
+unknown:Geschäftsstelle Daniel-von-Büren Str. 15
+7.161868699999999,50.6841813,0:Gerhard-Rohlfs-Str.
+unknown:St. Michaelis Gemeindehaus, Doventorsteinweg 51
+8.776084299999999,50.09563620000001,0:Offenbach / Main
+unknown:Ulrichsplatz / Wulwestr.
+unknown:Geschäftsstelle der PPD Bremen, Daniel-von-Büren-Str. 15
+unknown:Bahnhofsvorplatz neben der SKateranlage
+8.627275599999999,53.1710126,0:"El Presidente", Zur Vegesacker Fähre 2, 28757 Bremen
+-89.0059821,41.3192312,0:Park Hotel

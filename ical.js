@@ -9,11 +9,16 @@ var sources= [
       locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
                   [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] },
     { url: 'http://cal.piraten-thueringen.de/calendars/Hauptkalender.ics' },
-    { url: 'http://www.piratenpartei-hessen.de/calendar/ical' }
+    { url: 'http://www.piratenpartei-hessen.de/calendar/ical' },
+    { url: 'http://www.piratenpartei-hamburg.de/calendar/ical' }
     ];
 
-// expand subcalendars for NRW 
 expandDaviCal('http://kalender.piratenpartei-nrw.de');
+expandDaviCal('http://bremen.piratenpartei.de/Kalender');
+grabIcalLinks('http://piratenpartei-mv.de/kalender', 
+   [[/Cafe Central/, 'Hinter dem Rathaus 7, Wismar'],
+    [/Park Hotel/,'Im Bürgerpark, 28209 Bremen']]);
+
 function expandDaviCal(url) {
   request(url, function(error, response, body) {
     if (!error) {
@@ -29,13 +34,30 @@ function expandDaviCal(url) {
   });
 }
 
+function grabIcalLinks(url, locations) {
+  request(url, function(error, response, body) {
+    if (!error) {
+      var exp = /"http:[^"]*ics"[^<]*<\/a>/g;
+      var match = body.toString().match(exp);
+      for (var i in match) {
+        var match2= match[i].match(/"(http:.*ics)"[^>]*>([^<]*)</);
+        sources.push({
+          name: match2[2],
+          url : match2[1],
+          locations: locations
+        });
+      }
+    }
+  });
+}
+
 // loading calendar data
 function reloadCalendar(index) {
   if (index<sources.length) {
     var url= sources[index].url;
     console.log('loading ('+index+') : '+url);
     request(url, function(error, response, body) { 
-      if (!error) {
+      if (!error && response.statusCode == 200 && body && body.length>0) {
         body= body.replace(/\\/g,'');
         var parser= ijp.icalParser();
         parser.parseIcal(body);
@@ -44,6 +66,9 @@ function reloadCalendar(index) {
           eventLists[index]= events;
           reloadCalendar(index+1);
         });
+      } else {
+        console.log('Could not read: '+url);
+        reloadCalendar(index+1);
       }
     });
   } else {
@@ -75,7 +100,7 @@ function geoCodeEvents(events, i, options, callback) {
 }
 
 function convertDate(date) {
-  var match= date.match(/^(....)(..)(..)(T(..)(..)(..))?Z?$/);
+  var match= date.match(/(....)(..)(..)(T(..)(..)(..))?Z?$/);
   if (!match)
     console.log('Invalid time format: '+date);
   if (match[4])
@@ -131,5 +156,5 @@ function getPlaceMarks() {
 }
 
 reloadCalendar(0);
-setInterval(function() {reloadCalendar(0);}, 3600000);
+setInterval(function() {reloadCalendar(0);}, 7200000);
 exports.getPlaceMarks= getPlaceMarks;

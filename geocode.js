@@ -66,7 +66,7 @@ function resolveGoogle(address, callback) {
 
 function resolve(address, callback) {
   var cached= locations[address.toLowerCase()];
-  if (address.match(/^mumble|online.*mumble/i)) {
+  if (!address || address=="" || address.match(/^(NRW-)?mumble|online.*mumble/i)) {
     callback(false);
   }
   else if (cached) {
@@ -74,7 +74,7 @@ function resolve(address, callback) {
   } 
   else {
     resolveGoogle(address, function(error, location) {
-      if (location!==undefined)
+      if (location)
         codeToCache(address, location);
       callback(error, location);
     });
