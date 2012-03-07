@@ -4,6 +4,8 @@
  */
 
 var express = require('express');
+var geocode= require('./geocode');
+var ical= require('./ical');
 
 var app = module.exports = express.createServer();
 
@@ -36,6 +38,30 @@ var emos = [
     {file: 'sad', title: 'Traurig'},
     {file: 'happy', title: 'Gluecklich'}
   ];
+
+
+app.get('/admin/locations', function(req, res) {
+  geocode.getAll(function(err, values) {
+    res.render('admin/locations', {
+      title: 'Emogis',
+      codes: values
+    });
+  });
+});
+
+app.get('/details/:loc/:lod?/:loe?', function(req, res) {
+  var loc= req.params.loc;
+  if (req.param.lod)
+    loc= loc+'/'+req.param.lod;
+  if (req.param.loe)
+    loc= loc+'/'+req.param.loe;
+  res.render('details', {
+    title: 'Emogis',
+    loc: loc,
+    events: ical.getByLocation(loc)
+  });
+});
+
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Emogis',
@@ -69,7 +95,6 @@ app.get('/showmap', function(request, res){
 
 
 // geocoding API
-var geocode= require('./geocode');
 app.get('/geocode',function(request,response) {
     geocode.resolveGoogle(request.query.address, function(error, loc) {
       if (error) {
@@ -83,7 +108,7 @@ app.get('/geocode',function(request,response) {
 });
 
 // get Calendar placemarks
-var ical= require('./ical');
+/*var ical= require('./ical');
 app.get('/placemarks.kml', function(req, res) {
   res.header('Content-Type','application/vnd.google-earch.kml+xml');
   res.render('placemarks', {
@@ -91,7 +116,7 @@ app.get('/placemarks.kml', function(req, res) {
     layout: false
   });
 });
-
+*/
 app.get('/placemarks.html', function(req, res) {
   res.render('placemarks', {
     marks: ical.getPlaceMarks(),

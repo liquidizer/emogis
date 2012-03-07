@@ -37,7 +37,14 @@ function saveEntry(entry, callback) {
   })
 }
 
-function resolve(key, path, callback) {
+function getAll(callback) {
+  getCollection(function(collection) {
+    collection.find().toArray(callback);
+  });
+}
+
+function resolve(key, callback) {
+  if (!key || key==='') callback("empty key");
   getEntry(key, function(err, obj) {
     if (err) callback(err);
     if (obj) {
@@ -84,6 +91,7 @@ function resolveGoogle(address, callback) {
   });
 }
 
+exports.getAll= getAll;
 exports.resolve= resolve;
 exports.resolveGoogle= resolveGoogle;
 

@@ -1,0 +1,11 @@
+h1= loc
+  h2 Events
+  table
+    for ev in events
+      tr
+        td= ev._datestr
+        td
+          - if (ev.url)
+            a(href=ev.url.value)= ev.summary.value
+          - else
+            span= ev.summary.value

@@ -6,23 +6,23 @@ var eventLists=[];
 var sources= [
     { name: 'Bayern',
       url: 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=' }, 
-    { name. 'Brandenburg'
-      url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics',
-      locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
-                  [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] },
+    { name: 'Brandenburg',
+      url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics' },
+//      locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
+//                  [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] 
     { 
       name: 'Thüringen',
       url: 'http://cal.piraten-thueringen.de/calendars/Hauptkalender.ics' },
-    { name= 'Hessen',
+    { name: 'Hessen',
       url: 'http://www.piratenpartei-hessen.de/calendar/ical' },
-    { name= 'Hamburg',
+    { name: 'Hamburg',
       url: 'http://www.piratenpartei-hamburg.de/calendar/ical' }
     ];
 
 expandDaviCal('http://kalender.piratenpartei-nrw.de','Nordrhein Westfalen');
 expandDaviCal('http://bremen.piratenpartei.de/Kalender','Bremen');
-grabIcalLinks('http://piratenpartei-mv.de/kalender', 'Mäklenburg Vorpommern',
-   [[/Cafe Central/, 'Hinter dem Rathaus 7, Wismar']]);
+grabIcalLinks('http://piratenpartei-mv.de/kalender', 'Mäklenburg Vorpommern');
+//   [[/Cafe Central/, 'Hinter dem Rathaus 7, Wismar']]);
 
 function expandDaviCal(url) {
   request(url, function(error, response, body) {
@@ -39,7 +39,7 @@ function expandDaviCal(url) {
   });
 }
 
-function grabIcalLinks(url, locations) {
+function grabIcalLinks(url) {
   request(url, function(error, response, body) {
     if (!error) {
       var exp = /"http:[^"]*ics"[^<]*<\/a>/g;
@@ -48,8 +48,7 @@ function grabIcalLinks(url, locations) {
         var match2= match[i].match(/"(http:.*ics)"[^>]*>([^<]*)</);
         sources.push({
           name: match2[2],
-          url : match2[1],
-          locations: locations
+          url : match2[1]
         });
       }
     }
@@ -92,8 +91,8 @@ function geoCodeEvents(events, i, options, callback) {
           if (address.match(options.locations[route][0]))
             address=options.locations[route][1];
       geocode.resolve(address, function(error, location) {
-        if (!error) {
-          events[i].geo= { value: location };
+        if (location) {
+          events[i].geo= { value: location.lng+','+location.lat };
         }
         geoCodeEvents(events, i+1, options, callback);
       });
@@ -160,6 +159,22 @@ function getPlaceMarks() {
   return marks;
 }
 
+function getByLocation(location) {
+  var list=[];
+  for (var i in eventLists)
+    for (var j in eventLists[i]) {
+      var event= eventLists[i][j];
+      if (event.location &&
+          location.toLowerCase()==event.location.value.toLowerCase()) {
+            list.push(event);
+          }
+    }
+  return list;
+}
+
 reloadCalendar(0);
 setInterval(function() {reloadCalendar(0);}, 7200000);
+
 exports.getPlaceMarks= getPlaceMarks;
+exports.getByLocation= getByLocation;
+
