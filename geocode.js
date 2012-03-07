@@ -1,41 +1,62 @@
+var mongodb = require('mongodb');
 var request= require('request');
-var fs= require('fs');
 
-// location cache
-var locations= {};
-
-// unify nearby locations
-function unify(loc) {
-  // TODO
-  return loc;
+var server = new mongodb.Server("ds029317.mongolab.com", 29317, {});
+var geocodes= null;
+function getCollection(callback) {
+  if (geocodes) {
+    callback(geocodes);
+  } else {
+    var emogisdb = new mongodb.Db('emogis', server, {});
+    emogisdb.open(function(error, client) {
+      client.authenticate('emogis', '', function(error) {
+        console.log('connected');
+        if (error) throw error;
+        geocodes = new mongodb.Collection(client, 'geocodes');
+        callback(geocodes);
+      });
+    });
+  }
 }
 
-// load cache from disk
-fs.readFile('locations', function(err, data) {
-  if (err) {
-    console.log('Could not read location cache.');
-  } else {
-    var cacheFile= data.toString();
-    var lines= cacheFile.split('\n');
-    for (var i in lines) {
-      var match= lines[i].match(/(unknown|[0-9.,]+):(.*)/);
-      if (match) {
-        locations[match[2].toLowerCase()]= unify(match[1]);
-      }
-    }
-  }
-});
+function getEntry(key, callback) {
+  getCollection(function(collection) {
+    collection.find({_id : key.toLowerCase() }, function(err, cursor) {
+      if (err) callback(err, null);
+      else
+        cursor.nextObject(callback);
+    });
+  });
+}
 
-// cache an address
-function codeToCache(address, location) {
-  if (locations[address.toLowerCase()])
-    return;
-  locations[address.toLowerCase()]= unify(location);
-  fs.readFile('locations', function(err, data) {
-    if (!err) {
-      var cacheFile= data.toString();
-      cacheFile+= '\n'+location+':'+address;
-      fs.writeFile('locations', cacheFile);
+function saveEntry(entry, callback) {
+  getCollection(function(collection) {
+    collection.insert(entry, {
+      safe: true
+    }, callback)
+  })
+}
+
+function resolve(key, path, callback) {
+  getEntry(key, function(err, obj) {
+    if (err) callback(err);
+    if (obj) {
+      callback(false, obj.location);
+    } else {
+      resolveGoogle(key, function(err, location) {
+        if (err) {
+          callback(err);
+        } else {
+          var value= {
+            name: key,
+            location: location,
+            _id: key.toLowerCase()
+          };
+          saveEntry(value, function(err) {
+            callback(err, value.location);
+          });
+        }
+      });
     }
   });
 }
@@ -45,11 +66,11 @@ function resolveGoogle(address, callback) {
   var geo='http://maps.googleapis.com/maps/api/geocode/json?sensor=false&output=json&address='+encodeURI(address);
   request(geo, function(error, response, body) { 
     if (error) {
-      callback(true);
+      callback(error);
     } else {
       var result= eval("("+body+")");
       if (result.status=="ZERO_RESULTS") {
-        callback(true, "unknown");      
+        callback(false, undefined);      
         return;
       }
       if (result.status!="OK") {
@@ -58,27 +79,9 @@ function resolveGoogle(address, callback) {
         return;
       }
       var loc= result.results[0].geometry.location;
-      loc= loc.lng+','+loc.lat+',0';
       setTimeout(function(){ callback(false, loc); }, 100);
     }
   });
-}
-
-function resolve(address, callback) {
-  var cached= locations[address.toLowerCase()];
-  if (!address || address=="" || address.match(/^(NRW-)?mumble|online.*mumble/i)) {
-    callback(false);
-  }
-  else if (cached) {
-    callback(cached=="unknown", cached);
-  } 
-  else {
-    resolveGoogle(address, function(error, location) {
-      if (location)
-        codeToCache(address, location);
-      callback(error, location);
-    });
-  }
 }
 
 exports.resolve= resolve;

@@ -1,17 +1,20 @@
 
 # Virtual locations
-unknown:Telko
-unknown:versch. Orte
-unknown:Wahllokal vor Ort
-unknown:folgt
-unknown:Location unbekannt
-unknown:Virtuell
-unknown:Virtuell und per Toter Baum
-unknown:TecloServer Hessen
-unknown:TelcoServer Hessen
-unknown:Noch unbekannt
-unknown:kommt noch
-unknown:Wird noch bekanntgegeben
+virtual:Telko
+virtual:versch. Orte
+virtual:Wahllokal vor Ort
+virtual:folgt
+virtual:Location unbekannt
+virtual:Virtuell
+virtual:Virtuell und per Toter Baum
+virtual:TecloServer Hessen
+virtual:TelcoServer Hessen
+virtual:Noch unbekannt
+virtual:kommt noch
+virtual:Wird noch bekanntgegeben
+virtual:ICS.LOCATION
+virtual:wird noch bekannt gegeben
+virtual:Kai ist entschuldigt
 
 # Cached queries
 13.4307435,52.4819051,0:Sandmann, Erlanger Str. / Reuterstraße
@@ -386,12 +389,11 @@ unknown:Südstern, Bilkerallee, 66
 7.5285074,51.6104829,0:Greif in Lünen
 7.5668312,51.4448257,0:der Keule in Schwerte
 unknown:LOGE (ex: WDC)
-11.5843355,48.1668929,0:Saffran's
+unknown:Saffran's
 7.008653300000001,51.46227,0:Essen, Unperfekthaus
 unknown:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Heinrich-Heine-Platz, 40213 Düsseldorf (Stadtmitte)
 7.0614063,51.3394747,0:FLUX, Langenberger Straße 125, 42551 Velbert
 7.4556184,51.49824839999999,0:B1st Software-Factory Dortmund, Rheinlanddamm 201, 44139 Dortmund
-unknown:Kai ist entschuldigt
 
 # Thüringen
 unknown:Ricarda-Huch-Haus, Jena
@@ -876,60 +878,6 @@ unknown:Seniorenzentrum am Oslebshauser Park
 unknown:Präsidentenzimmer in der Bremischen Bürgerschaft
 unknown:Raum I in der Bremischen Bürgerschaft
 unknown:Schwankhalle, Buntentorsteinweg
-
-# MV
-10.9254728,50.6843502,0:Parkcafe Ilmenau
-11.036353,50.975886,0:Anger, Erfurt
-10.7092884,50.9469188,0:S'Limerick Gotha
-10.9254728,50.6843502,0:„Nasse Post“ Ilmenau
-unknown:Milchbar in der Lindenstraße
-9.95934,53.56124,0:Lippmannstraße 57, Hamburg
-13.3923414,54.08654629999999,0:Greifswald, Das Sofa
-12.119186,54.093367,0:Restaurant Lenks, Warnowufer 59, 18057 Rostock, Germany
-11.4128898,53.6324347,0:Buntes Q, Schwerin
-11.40971,53.64091999999999,0:bei Jagau klingeln, Heinrich Seidel Strasse 5, 19055 Schwerin
-11.41999,53.63216,0:Freischütz, Ziegenmarkt 11, 19055 Schwerin
-11.4177,53.63046000000001,0:Alte Münze, Münzstraße 21, 19055 Schwerin
-13.3923414,54.08654629999999,0:Das Sofa, Greifswald
-11.4128898,53.6324347,0:Freischütz, Schwerin
-unknown:Dieters, Stadt
-12.1058668,54.09010379999999,0:Lenk's Restaurant-BackBar-CafénLenk's Restaurant-BackBar-Café, Warnowufer 59, in den Hafenterrassen, 18057 Rostock
-12.1004289,54.0834186,0:Helgas Kitchen, Rostock
-12.1004289,54.0834186,0:Kabutzenhof / höhe Max-Plank-Institut / am Wasser, Rostock
-12.1254046,54.0851766,0:Helgas Kitchen, Am Vögenteich 19, Rostock
-12.1004289,54.0834186,0:Helgas Kitchen,Rostock
-12.1004289,54.0834186,0:La Casa de Cuba, Rostock
-12.1004289,54.0834186,0:Rostock, La Casa de Cuba
-12.1199,54.07018,0:Werkstattschule, Pawlowstraße 16, Rostock
-12.1004289,54.0834186,0:Rostock
-unknown:Cafè Lom
-12.1004289,54.0834186,0:Rostock / La Casa de Cuba
-13.263159,53.55896869999999,0:Torcafe im Friedländer Tor, Friedländer Strasse, 17033 Neubrandenburg
-11.4128898,53.6324347,0:Schwerin
-13.0877143,54.2994048,0:Stralsund
-14.09461,53.67566,0:Stettiner Straße 1, 17367 Eggesin
-unknown:Restaurant "Goldener Löwe" am Alten Markt
-13.3835785,54.0956684,0:"Sofa", Brüggstraße 29, Greifswald
-12.1058668,54.09010379999999,0:Lenk's Restaurant-BackBar-CaféLenk's Restaurant-BackBar-Café, Warnowufer 59, in den Hafenterrassen, 18057 Rostock
-8.776084299999999,50.09563620000001,0:Offenbach
-11.3906689,53.637632,0:Schwerin, Sitzungssaal am Sitz der Landeswahlleiterin, Lübecker Str. 287, 19059 Schwerin
-12.1004289,54.0834186,0:Rostock, Café Lotte
-12.1198994,54.09117699999999,0:Patriotischer Weg
-12.1341152,54.0875612,0:Universitätsplatz Rostock
-12.1341152,54.0875612,0:Universitätsplatz, Rostock
-12.1076118,54.0863761,0:Ulmenstraße 69, Rostock
-13.3803558,54.0777776,0:DJH Jugendherberge Greifswald, Pestalozzistraße 11/12, 17489 Greifswald
-10.1658148,48.6628951,0:Congress Centrum Heidenheim, Hugo-Rupf-Platz 1, 89522 Heidenheim an der Brenz
-12.1076118,54.0863761,0:Ulmenstraße 69 Haus 1, Rostock
-12.0833333,54.1666667,0:Rostock, Warnemünde
-12.0833333,54.1666667,0:Rostock/Warnemünde
-12.9213697,50.827845,0:Chemnitz
-6.554698,51.197021,0:Kleinenbroich
-6.810061699999999,51.220532,0:Düsseldorf 
-13.3746958,52.50906459999999,0:Berlin, Potsdamer Platz
-9.15743,47.68893,0:Wollmatinger Halle, Schwaketenstraße 31, 78467 Konstanz
-11.012657,50.93632299999999,0:Waldhaus (Saal im ersten Stockwerk), Rhodaer Chaussee 12, 99094 Erfurt
-
 11.4666574,53.8922888,0:Hinter dem Rathaus 7, Wismar
 unknown:Bibliothek der Grundschule Admiralstraße, Winterstraße 20.
 unknown:Bremische Bürgerschaft, Sitzungsraum II
@@ -988,14 +936,13 @@ unknown:Katakomben, Obernstr. 16, Achim
 unknown:Geschäftstelle
 8.6235874,53.1709524,0:Bistro Cordoba, Sagerstraße 27, 28757 Bremen
 8.5833333,53.55,0:Bremerhaven
-unknown:wird noch bekannt gegeben
 11.94022,47.39546,0:Lagerhaus
 unknown:Geschäftsstelle Daniel-von-Büren-Str. 15
 8.8012952,53.08452819999999,0:Daniel-von-Büren-Str. 15
 8.8044917,53.0838997,0:GS, Daniel-von-Büren-Str. 15, 28195 Bremen
 8.758792999999999,53.1173124,0:Helene-Kaisen-Haus, Beim Ohlenhof 10, 28239 Bremen
-10.370632,53.190967,0:Geschäftsstelle
--36.587909,-54.429579,0:GS
+unknown:Geschäftsstelle
+unknown:GS
 unknown:Bürgerhaus Eidelstedt
 6.581073099999999,51.0929898,0:Bahnhofsvorplatz
 unknown:Daniel-von-Büren-Str. 15 (Geschäftsstelle Piraten)
@@ -1005,7 +952,6 @@ unknown:Delmestr. Ecke Pappelstr.
 8.6661941,53.04637899999999,0:Kerem Kulturkneipe, Syker Str. 190, 27751 Delmenhorst
 8.8012952,53.08452819999999,0:Daniel-von-Büren-Str. 15, 28195 Bremen
 8.8044917,53.0838997,0:Daniel-von-BÃ¼ren-Str. 15, 28195 Bremen
-unknown:ICS.LOCATION
 8.8044917,53.0838997,0:Geschäftsstelle, Daniel-von-Büren-Str. 15, 28195 Bremen
 unknown:GS Bremen Stadt - Daniel-von-Büren-Str 15
 8.053799999999999,49.94204,0:Weserhaus
@@ -1020,3 +966,57 @@ unknown:Geschäftsstelle der PPD Bremen, Daniel-von-Büren-Str. 15
 unknown:Bahnhofsvorplatz neben der SKateranlage
 8.627275599999999,53.1710126,0:"El Presidente", Zur Vegesacker Fähre 2, 28757 Bremen
 -89.0059821,41.3192312,0:Park Hotel
+
+# MV
+10.9254728,50.6843502,0:Parkcafe Ilmenau
+11.036353,50.975886,0:Anger, Erfurt
+10.7092884,50.9469188,0:S'Limerick Gotha
+10.9254728,50.6843502,0:„Nasse Post“ Ilmenau
+unknown:Milchbar in der Lindenstraße
+9.95934,53.56124,0:Lippmannstraße 57, Hamburg
+13.3923414,54.08654629999999,0:Greifswald, Das Sofa
+12.119186,54.093367,0:Restaurant Lenks, Warnowufer 59, 18057 Rostock, Germany
+11.4128898,53.6324347,0:Buntes Q, Schwerin
+11.40971,53.64091999999999,0:bei Jagau klingeln, Heinrich Seidel Strasse 5, 19055 Schwerin
+11.41999,53.63216,0:Freischütz, Ziegenmarkt 11, 19055 Schwerin
+11.4177,53.63046000000001,0:Alte Münze, Münzstraße 21, 19055 Schwerin
+13.3923414,54.08654629999999,0:Das Sofa, Greifswald
+11.4128898,53.6324347,0:Freischütz, Schwerin
+unknown:Dieters, Stadt
+12.1058668,54.09010379999999,0:Lenk's Restaurant-BackBar-CafénLenk's Restaurant-BackBar-Café, Warnowufer 59, in den Hafenterrassen, 18057 Rostock
+12.1004289,54.0834186,0:Helgas Kitchen, Rostock
+12.1004289,54.0834186,0:Kabutzenhof / höhe Max-Plank-Institut / am Wasser, Rostock
+12.1254046,54.0851766,0:Helgas Kitchen, Am Vögenteich 19, Rostock
+12.1004289,54.0834186,0:Helgas Kitchen,Rostock
+12.1004289,54.0834186,0:La Casa de Cuba, Rostock
+12.1004289,54.0834186,0:Rostock, La Casa de Cuba
+12.1199,54.07018,0:Werkstattschule, Pawlowstraße 16, Rostock
+12.1004289,54.0834186,0:Rostock
+unknown:Cafè Lom
+12.1004289,54.0834186,0:Rostock / La Casa de Cuba
+13.263159,53.55896869999999,0:Torcafe im Friedländer Tor, Friedländer Strasse, 17033 Neubrandenburg
+11.4128898,53.6324347,0:Schwerin
+13.0877143,54.2994048,0:Stralsund
+14.09461,53.67566,0:Stettiner Straße 1, 17367 Eggesin
+unknown:Restaurant "Goldener Löwe" am Alten Markt
+13.3835785,54.0956684,0:"Sofa", Brüggstraße 29, Greifswald
+12.1058668,54.09010379999999,0:Lenk's Restaurant-BackBar-CaféLenk's Restaurant-BackBar-Café, Warnowufer 59, in den Hafenterrassen, 18057 Rostock
+8.776084299999999,50.09563620000001,0:Offenbach
+11.3906689,53.637632,0:Schwerin, Sitzungssaal am Sitz der Landeswahlleiterin, Lübecker Str. 287, 19059 Schwerin
+12.1004289,54.0834186,0:Rostock, Café Lotte
+12.1198994,54.09117699999999,0:Patriotischer Weg
+12.1341152,54.0875612,0:Universitätsplatz Rostock
+12.1341152,54.0875612,0:Universitätsplatz, Rostock
+12.1076118,54.0863761,0:Ulmenstraße 69, Rostock
+13.3803558,54.0777776,0:DJH Jugendherberge Greifswald, Pestalozzistraße 11/12, 17489 Greifswald
+10.1658148,48.6628951,0:Congress Centrum Heidenheim, Hugo-Rupf-Platz 1, 89522 Heidenheim an der Brenz
+12.1076118,54.0863761,0:Ulmenstraße 69 Haus 1, Rostock
+12.0833333,54.1666667,0:Rostock, Warnemünde
+12.0833333,54.1666667,0:Rostock/Warnemünde
+12.9213697,50.827845,0:Chemnitz
+6.554698,51.197021,0:Kleinenbroich
+6.810061699999999,51.220532,0:Düsseldorf 
+13.3746958,52.50906459999999,0:Berlin, Potsdamer Platz
+9.15743,47.68893,0:Wollmatinger Halle, Schwaketenstraße 31, 78467 Konstanz
+11.012657,50.93632299999999,0:Waldhaus (Saal im ersten Stockwerk), Rhodaer Chaussee 12, 99094 Erfurt
+

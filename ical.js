@@ -4,20 +4,25 @@ var ijp= require('./ijp');
 
 var eventLists=[];
 var sources= [
-    { url: 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=' }, 
-    { url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics',
+    { name: 'Bayern',
+      url: 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=' }, 
+    { name. 'Brandenburg'
+      url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics',
       locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
                   [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] },
-    { url: 'http://cal.piraten-thueringen.de/calendars/Hauptkalender.ics' },
-    { url: 'http://www.piratenpartei-hessen.de/calendar/ical' },
-    { url: 'http://www.piratenpartei-hamburg.de/calendar/ical' }
+    { 
+      name: 'Thüringen',
+      url: 'http://cal.piraten-thueringen.de/calendars/Hauptkalender.ics' },
+    { name= 'Hessen',
+      url: 'http://www.piratenpartei-hessen.de/calendar/ical' },
+    { name= 'Hamburg',
+      url: 'http://www.piratenpartei-hamburg.de/calendar/ical' }
     ];
 
-expandDaviCal('http://kalender.piratenpartei-nrw.de');
-expandDaviCal('http://bremen.piratenpartei.de/Kalender');
-grabIcalLinks('http://piratenpartei-mv.de/kalender', 
-   [[/Cafe Central/, 'Hinter dem Rathaus 7, Wismar'],
-    [/Park Hotel/,'Im Bürgerpark, 28209 Bremen']]);
+expandDaviCal('http://kalender.piratenpartei-nrw.de','Nordrhein Westfalen');
+expandDaviCal('http://bremen.piratenpartei.de/Kalender','Bremen');
+grabIcalLinks('http://piratenpartei-mv.de/kalender', 'Mäklenburg Vorpommern',
+   [[/Cafe Central/, 'Hinter dem Rathaus 7, Wismar']]);
 
 function expandDaviCal(url) {
   request(url, function(error, response, body) {
