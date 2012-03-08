@@ -40,25 +40,55 @@ var emos = [
   ];
 
 
-app.get('/admin/locations', function(req, res) {
+app.get('/admin/update', function(req, res) {
+  console.log('update');
+  for (var i in req.query) {
+    console.log(i+ ' -> '+req.query[i]);
+  }
+  if (req.query.submit=='Delete') {
+    geocode.removeEntry(req.query.id);
+    res.writeHead(303, {"Location": "/admin/locations" });
+    res.end();
+  }
+  else {
+    res.writeHead(303, {"Location": "/admin/locations#"+encodeURI(req.query.id)});
+    res.end();
+  }
+});
+
+app.get(/(\/admin)?\/locations/, function(req, res) {
   geocode.getAll(function(err, values) {
-    res.render('admin/locations', {
+    res.render('locations', {
       title: 'Emogis',
       codes: values
     });
   });
 });
 
-app.get('/details/:loc/:lod?/:loe?', function(req, res) {
-  var loc= req.params.loc;
-  if (req.param.lod)
-    loc= loc+'/'+req.param.lod;
-  if (req.param.loe)
-    loc= loc+'/'+req.param.loe;
-  res.render('details', {
-    title: 'Emogis',
-    loc: loc,
-    events: ical.getByLocation(loc)
+app.get(/(\/admin)?\/details\//, function(req, res) {
+  var match= req.url.match(/(\/admin)?\/details\/(.*)/);
+  var loc= decodeURI(match[2]);
+  var events= ical.getByLocation(loc);
+  geocode.getEntry(loc, function(err, entry) {
+    var routes={}
+    for (var i in events) {
+      var ev= events[i];
+      if (!routes[ev._src]) {
+        if (entry.routes && entry.routes[ev._src])
+          routes[ev._src]= entry.routes[ev._src];
+        else
+          routes[ev._src]= '';
+      }
+    }
+    if (err) throw err;
+    res.render('details', {
+      title: 'Emogis',
+      address: loc,
+      events: events,
+      admin: match[1]=='/admin',
+      geocode: entry.location,
+      routes: routes
+    });
   });
 });
 
@@ -97,12 +127,12 @@ app.get('/showmap', function(request, res){
 // geocoding API
 app.get('/geocode',function(request,response) {
     geocode.resolveGoogle(request.query.address, function(error, loc) {
-      if (error) {
+      if (error || !loc) {
         response.writeHead(500, {"Content-Type": "text/plain"});
         response.end("{}");
       } else {
         response.writeHead(200, {"Content-Type": "text/plain"});
-        response.end("(["+loc+"])");
+        response.end("(["+loc.lat+","+loc.lng+"])");
       }});
     return;
 });

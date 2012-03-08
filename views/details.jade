@@ -1,11 +1,48 @@
-h1= loc
-  h2 Events
-  table
-    for ev in events
-      tr
-        td= ev._datestr
-        td
-          - if (ev.url)
-            a(href=ev.url.value)= ev.summary.value
-          - else
-            span= ev.summary.value
+script(type='text/javascript', src='/geoview.js')
+script(type='text/javascript', src='http://maps.google.com/maps/api/js?sensor=false')
+h1= address
+- if (admin)
+  div.admin
+    form(method='get', name='admin', action='/admin/update')
+      h2 Adminstration
+      - if (geocode && typeof(geocode)=='object')
+        input#geocode(name='geocode', value=geocode.lat+','+geocode.lng)
+      - else
+        input#geocode(name='geocode', value=geocode)
+      table
+        tr
+          td Virtual
+          td
+            input(name='virtual', type='checkbox', checked=(geocode=='virtual'))
+
+        for route,name in routes
+          tr
+            td= name
+            td 
+              input(name='route-'+name, value=route)
+      div(style='display:none')
+        input(value=address, name='id')
+      input(type='submit', value='Save', name='submit')
+      p(align='right')
+        input(type='submit', value='Delete', name='submit')
+    input#google
+    input(type='button', value='Geocode', onclick='geoCode()')
+    input(type='button', value='Choose Center', onclick='mapToInput()')
+    input(type='button', value='Google It', onclick='searchGoogle("'+address+'")')
+
+div#map_canvas(style='border: 1px solid black; width:100%; height:200px; margin:10px')
+table.list
+  for ev in events
+    tr
+      td= ev._datestr
+      td
+        - if (ev.url)
+          a(href=ev.url.value)= ev.summary.value
+        - else
+          span= ev.summary.value
+      td
+        a(href=ev._home)= ev._src
+
+div(style='display:none')
+  -if (geocode)
+    #me(lat='#{geocode.lat}', long='#{geocode.lng}', zoom='14')

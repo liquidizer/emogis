@@ -4,42 +4,55 @@ var ijp= require('./ijp');
 
 var eventLists=[];
 var sources= [
-    { name: 'Bayern',
+    { 
+      name: ['Bayern'],
+      home: 'http://events.piratenpartei-bayern.de/',
       url: 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=' }, 
-    { name: 'Brandenburg',
+    { 
+      name: ['Brandenburg'],
+      home: 'http://kalender.piratenbrandenburg.de',
       url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics' },
 //      locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
 //                  [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] 
     { 
-      name: 'Thüringen',
+      name: ['Thüringen'],
+      home: 'http://cal.piraten-thueringen.de',
       url: 'http://cal.piraten-thueringen.de/calendars/Hauptkalender.ics' },
-    { name: 'Hessen',
+    { 
+      name: ['Hessen'],
+      home: 'http://www.piratenpartei-hessen.de',
       url: 'http://www.piratenpartei-hessen.de/calendar/ical' },
-    { name: 'Hamburg',
+    { 
+      name: ['Hamburg'],
+      home: 'http://www.piratenpartei-hamburg.de',
       url: 'http://www.piratenpartei-hamburg.de/calendar/ical' }
     ];
 
-expandDaviCal('http://kalender.piratenpartei-nrw.de','Nordrhein Westfalen');
-expandDaviCal('http://bremen.piratenpartei.de/Kalender','Bremen');
+//expandDaviCal('http://kalender.piratenpartei-nrw.de','Nordrhein Westfalen');
+//expandDaviCal('http://bremen.piratenpartei.de/Kalender','Bremen');
 grabIcalLinks('http://piratenpartei-mv.de/kalender', 'Mäklenburg Vorpommern');
 //   [[/Cafe Central/, 'Hinter dem Rathaus 7, Wismar']]);
 
-function expandDaviCal(url) {
+function expandDaviCal(url, name) {
   request(url, function(error, response, body) {
     if (!error) {
       var exp = /<select name="cal\[\]"(.|\n)*\/select/;
       var match = body.toString().match(exp);
-      var exp2 = /option value="([^"]+)"/g;
+      var exp2 = /option[^>]*>([^<]*)<\/option>/g;
       var match2 = match[0].match(exp2);
-      for (var i in match2)
+      for (var i in match2) {
+        var match3= match2[i].match(/value="([^"]+)"[^>]*>([^<]*)</);
         sources.push({
-          url : url+'/calendars/'+match2[i].match(/value="([^"]+)"/)[1]+'.ics'
+          home: url,
+          name: [name, match3[2].replace(/ *$/,'')],
+          url : url+'/calendars/'+match3[1]+'.ics'
         });
+      }
     }
   });
 }
 
-function grabIcalLinks(url) {
+function grabIcalLinks(url, name) {
   request(url, function(error, response, body) {
     if (!error) {
       var exp = /"http:[^"]*ics"[^<]*<\/a>/g;
@@ -47,7 +60,8 @@ function grabIcalLinks(url) {
       for (var i in match) {
         var match2= match[i].match(/"(http:.*ics)"[^>]*>([^<]*)</);
         sources.push({
-          name: match2[2],
+          home: url,
+          name: [name, match2[2]],
           url : match2[1]
         });
       }
@@ -59,6 +73,7 @@ function grabIcalLinks(url) {
 function reloadCalendar(index) {
   if (index<sources.length) {
     var url= sources[index].url;
+
     console.log('loading ('+index+') : '+url);
     request(url, function(error, response, body) { 
       if (!error && response.statusCode == 200 && body && body.length>0) {
@@ -71,7 +86,7 @@ function reloadCalendar(index) {
           reloadCalendar(index+1);
         });
       } else {
-        console.log('Could not read: '+url);
+        console.warn('Could not read: '+url);
         reloadCalendar(index+1);
       }
     });
@@ -81,23 +96,20 @@ function reloadCalendar(index) {
 }
 
 // add missing geo information
-function geoCodeEvents(events, i, options, callback) {
-  if (i<events.length) {
-    updateEventData(events[i]);
-    if (!events[i].geo && events[i].location) {
-      var address= events[i].location.value;
-      if (options.locations)
-        for (var route in options.locations) 
-          if (address.match(options.locations[route][0]))
-            address=options.locations[route][1];
+function geoCodeEvents(events, j, options, callback) {
+  if (j<events.length) {
+    updateEventData(events[j], options);
+    if (!events[j].geo && events[j].location) {
+      var address= events[j].location.value;
       geocode.resolve(address, function(error, location) {
         if (location) {
-          events[i].geo= { value: location.lng+','+location.lat };
+          events[j].geo= { value: location.lng+','+location.lat };
         }
-        geoCodeEvents(events, i+1, options, callback);
+        geoCodeEvents(events, j+1, options, callback);
       });
-    } else
-      geoCodeEvents(events, i+1, options, callback);
+    } else {
+      geoCodeEvents(events, j+1, options, callback);
+    }
   } else {
     callback();
   }
@@ -121,12 +133,14 @@ function formatDate(date) {
   return datestr;
 }
 
-function updateEventData(event) {
+function updateEventData(event, options) {
   if (!event.url && event.description) {
     var match= event.description.value.match(/.*(https?:\/\/[^ ";]+).*/);
     if (match)
       event.url= { value : match[1] };
   }
+  event._home= options.home;
+  event._src= options.name;
   if (event.dtstart) {
     event._dtstart= convertDate(event.dtstart.value);
     event._datestr= formatDate(event._dtstart);

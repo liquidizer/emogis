@@ -1,23 +1,51 @@
+var map;
 
 window.onload= function() {
   initialize();
-  setInterval(function() {
-    window.history.back()
-  }, 360000);
 };
 
 function initialize() {
   var me= getPosition(document.getElementById('me'));
   var latlng = new google.maps.LatLng(me.lat, me.long);
   var myOptions = {
-    zoom: 10,
+    zoom: me.zoom || 10,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-  var map = new google.maps.Map(document.getElementById("map_canvas"),
+  map = new google.maps.Map(document.getElementById("map_canvas"),
       myOptions);
   setPlaceMarks(map);
   overlay(map);
+}
+
+// admin function
+function searchGoogle(root) {
+  var input= document.getElementById('google').value;
+  window.open('http://google.com?q='+encodeURI(root+' '+input));
+}
+
+function geoCode() {
+  console.log('geocoding');
+  var request= new XMLHttpRequest();
+  request.onreadystatechange= function() {
+    console.log(request.responseText);
+    var loc= eval(request.responseText);
+    if (loc) {
+      map.setCenter(
+        new google.maps.LatLng(loc[0], loc[1]));
+    }
+  };
+  var address= document.getElementById('google').value;
+  request.open("GET", "/geocode?address="+encodeURI(address), true);
+  request.send(null);
+
+}
+
+// admin function
+function mapToInput() {
+  var pos= map.getCenter();
+  document.getElementById('geocode')
+    .setAttribute('value', pos.lat()+','+pos.lng());
 }
 
 function setPlaceMarks(map) {
@@ -43,17 +71,21 @@ function overlay(map) {
 function getData() {
   var data= [];
   var node= document.getElementById('data');
-  for (var i=0; i<node.childNodes.length; ++i) {
-    var child= node.childNodes[i];
-    data.push(getPosition(child));
+  if (node) {
+    for (var i=0; i<node.childNodes.length; ++i) {
+      var child= node.childNodes[i];
+      data.push(getPosition(child));
+    }
   }
   return data;
 }
 
 function getPosition(obj) {
-    return {
-      lat: parseFloat(obj.getAttribute('lat')),
-      long: parseFloat(obj.getAttribute('long')),
-      icon: obj.getAttribute('icon')
-    };
+  if (!obj) return {};
+  return {
+    lat: parseFloat(obj.getAttribute('lat')),
+    long: parseFloat(obj.getAttribute('long')),
+    zoom: parseInt(obj.getAttribute('zoom'),10),
+    icon: obj.getAttribute('icon')
+  };
 }

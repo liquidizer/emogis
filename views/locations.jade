@@ -1,5 +1,5 @@
 h1 Emogis
-table
+table.list
   tr
     th(colspan='2') Location
     th Name
@@ -11,4 +11,5 @@ table
       - else
         td(colspan='2')= entry.location
       td
-        a(href='/details/'+encodeURI(entry.name))= entry.name
+        a(name=encodeURI(entry.name))
+          a(href='/admin/details/'+encodeURI(entry.name))= entry.name

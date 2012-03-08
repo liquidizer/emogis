@@ -2,12 +2,13 @@ var mongodb = require('mongodb');
 var request= require('request');
 
 var server = new mongodb.Server("ds029317.mongolab.com", 29317, {});
+var emogisdb = new mongodb.Db('emogis', server, {});
 var geocodes= null;
+
 function getCollection(callback) {
   if (geocodes) {
     callback(geocodes);
   } else {
-    var emogisdb = new mongodb.Db('emogis', server, {});
     emogisdb.open(function(error, client) {
       client.authenticate('emogis', '', function(error) {
         console.log('connected');
@@ -17,6 +18,21 @@ function getCollection(callback) {
       });
     });
   }
+}
+
+  getCollection( function(collection){
+    collection.remove({
+        "name": ""
+    });
+  });
+
+
+function removeEntry(key) {
+  getCollection( function(collection){
+    collection.remove({
+        "_id": key.toLowerCase()
+    });
+  });
 }
 
 function getEntry(key, callback) {
@@ -30,6 +46,10 @@ function getEntry(key, callback) {
 }
 
 function saveEntry(entry, callback) {
+  if (entry.name=='') {
+    console.log('invalid name ""');
+    throw "false name";
+  }
   getCollection(function(collection) {
     collection.insert(entry, {
       safe: true
@@ -44,12 +64,18 @@ function getAll(callback) {
 }
 
 function resolve(key, callback) {
-  if (!key || key==='') callback("empty key");
+  if (!key || key==='') {
+    callback("empty key");
+    return;
+  }
   getEntry(key, function(err, obj) {
-    if (err) callback(err);
-    if (obj) {
+    if (err)  {
+      callback(err);
+    }
+    else if (obj) {
       callback(false, obj.location);
-    } else {
+    }
+    else {
       resolveGoogle(key, function(err, location) {
         if (err) {
           callback(err);
@@ -70,9 +96,11 @@ function resolve(key, callback) {
 
 // Use Google to Resolve
 function resolveGoogle(address, callback) {
+  console.log('GOOOOOGLE: "'+address+'"');
   var geo='http://maps.googleapis.com/maps/api/geocode/json?sensor=false&output=json&address='+encodeURI(address);
   request(geo, function(error, response, body) { 
     if (error) {
+      console.warn('Google error: '+error);
       callback(error);
     } else {
       var result= eval("("+body+")");
@@ -81,8 +109,8 @@ function resolveGoogle(address, callback) {
         return;
       }
       if (result.status!="OK") {
-        console.log("Google geocode error: "+result.status);
-        callback(true);
+        console.log('Google geocode error: '+result.status);
+        callback('Google error: '+result.status);
         return;
       }
       var loc= result.results[0].geometry.location;
@@ -92,6 +120,8 @@ function resolveGoogle(address, callback) {
 }
 
 exports.getAll= getAll;
+exports.getEntry= getEntry;
+exports.removeEntry= removeEntry;
 exports.resolve= resolve;
 exports.resolveGoogle= resolveGoogle;
 
