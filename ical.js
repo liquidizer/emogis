@@ -5,25 +5,25 @@ var ijp= require('./ijp');
 var eventLists=[];
 var sources= [
     { 
-      name: ['Bayern'],
+      name: 'Bayern',
       home: 'http://events.piratenpartei-bayern.de/',
       url: 'http://events.piratenpartei-bayern.de/events/ical?gid=&cid=&subgroups=0&start=&end=' }, 
     { 
-      name: ['Brandenburg'],
+      name: 'Brandenburg',
       home: 'http://kalender.piratenbrandenburg.de',
       url: 'http://kalender.piratenbrandenburg.de/static/lvbb-land.ics' },
 //      locations: [[/LGS/, 'Am Bürohochhaus 2-4, 14478 Potsdam'],
 //                  [/Alleestraße 9/, 'Alleestraße 9, Potsdam']] 
     { 
-      name: ['Thüringen'],
+      name: 'Thüringen',
       home: 'http://cal.piraten-thueringen.de',
       url: 'http://cal.piraten-thueringen.de/calendars/Hauptkalender.ics' },
     { 
-      name: ['Hessen'],
+      name: 'Hessen',
       home: 'http://www.piratenpartei-hessen.de',
       url: 'http://www.piratenpartei-hessen.de/calendar/ical' },
     { 
-      name: ['Hamburg'],
+      name: 'Hamburg',
       home: 'http://www.piratenpartei-hamburg.de',
       url: 'http://www.piratenpartei-hamburg.de/calendar/ical' }
     ];
@@ -44,7 +44,7 @@ function expandDaviCal(url, name) {
         var match3= match2[i].match(/value="([^"]+)"[^>]*>([^<]*)</);
         sources.push({
           home: url,
-          name: [name, match3[2].replace(/ *$/,'')],
+          name: name, // +'/'+match3[2].replace(/ *$/,''),
           url : url+'/calendars/'+match3[1]+'.ics'
         });
       }
@@ -61,7 +61,7 @@ function grabIcalLinks(url, name) {
         var match2= match[i].match(/"(http:.*ics)"[^>]*>([^<]*)</);
         sources.push({
           home: url,
-          name: [name, match2[2]],
+          name: name, // +'/'+, match2[2]],
           url : match2[1]
         });
       }
@@ -101,9 +101,10 @@ function geoCodeEvents(events, j, options, callback) {
     updateEventData(events[j], options);
     if (!events[j].geo && events[j].location) {
       var address= events[j].location.value;
-      geocode.resolve(address, function(error, location) {
-        if (location) {
-          events[j].geo= { value: location.lng+','+location.lat };
+      geocode.resolve(address, { name : options.name, persist: true },
+      function(error, location) {
+        if (location && location.lng && location.lat) {
+          events[j].geo= { value: location.lng.toFixed(5)+','+location.lat.toFixed(5) };
         }
         geoCodeEvents(events, j+1, options, callback);
       });
@@ -115,14 +116,17 @@ function geoCodeEvents(events, j, options, callback) {
   }
 }
 
-function convertDate(date) {
+function convertDate(date, isStart) {
   var match= date.match(/(....)(..)(..)(T(..)(..)(..))?Z?$/);
   if (!match)
     console.log('Invalid time format: '+date);
   if (match[4])
     return new Date(match[1],match[2]-1,match[3],match[5],match[6]);
   else
-    return new Date(match[1],match[2],match[3],0,0);
+    if (isStart)
+      return new Date(match[1],match[2],match[3],0,0);
+    else
+      return new Date(match[1],match[2],match[3],23,59);
 }
 
 function formatDate(date) {
@@ -142,10 +146,12 @@ function updateEventData(event, options) {
   event._home= options.home;
   event._src= options.name;
   if (event.dtstart) {
-    event._dtstart= convertDate(event.dtstart.value);
+    event._dtstart= convertDate(event.dtstart.value, true);
     event._datestr= formatDate(event._dtstart);
     if (event.dtend)
-      event._dtend= convertDate(event.dtend.value);
+      event._dtend= convertDate(event.dtend.value, false);
+    else
+      event._dtend= convertDate(event.dtstart.value, false);
   } else {
     event._datestr='???';
   }
@@ -157,7 +163,8 @@ function getPlaceMarks() {
   for (var i in eventLists)
     for (var j in eventLists[i]) {
       var event= eventLists[i][j];
-      if (event.geo && event.geo.value) {
+      var isActive= new Date().getTime()- 4*3600*1000 < event._dtend;
+      if (isActive && event.geo && event.geo.value) {
         var mark= marks[event.geo.value];
         if (!mark) {
           mark= { name: event.location.value, events: [], fixed: {}};
@@ -178,7 +185,8 @@ function getByLocation(location) {
   for (var i in eventLists)
     for (var j in eventLists[i]) {
       var event= eventLists[i][j];
-      if (event.location &&
+      var isActive= new Date().getTime()- 4*3600*1000 < event._dtend;
+      if (isActive && event.location &&
           location.toLowerCase()==event.location.value.toLowerCase()) {
             list.push(event);
           }

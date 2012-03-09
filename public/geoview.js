@@ -41,13 +41,6 @@ function geoCode() {
 
 }
 
-// admin function
-function mapToInput() {
-  var pos= map.getCenter();
-  document.getElementById('geocode')
-    .setAttribute('value', pos.lat()+','+pos.lng());
-}
-
 function setPlaceMarks(map) {
   var georssLayer = new google.maps.KmlLayer('http://gis.liquidizer.org/placemarks.kml', {
     preserveViewport : true

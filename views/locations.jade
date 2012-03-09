@@ -13,3 +13,6 @@ table.list
       td
         a(name=encodeURI(entry.name))
           a(href='/admin/details/'+encodeURI(entry.name))= entry.name
+      td
+        -if (entry.verified)
+          | verified

@@ -11,21 +11,14 @@ function getCollection(callback) {
   } else {
     emogisdb.open(function(error, client) {
       client.authenticate('emogis', '', function(error) {
-        console.log('connected');
         if (error) throw error;
+        console.log('connected');
         geocodes = new mongodb.Collection(client, 'geocodes');
         callback(geocodes);
       });
     });
   }
 }
-
-  getCollection( function(collection){
-    collection.remove({
-        "name": ""
-    });
-  });
-
 
 function removeEntry(key) {
   getCollection( function(collection){
@@ -46,7 +39,7 @@ function getEntry(key, callback) {
 }
 
 function saveEntry(entry, callback) {
-  if (entry.name=='') {
+  if (!entry.name) {
     console.log('invalid name ""');
     throw "false name";
   }
@@ -57,13 +50,23 @@ function saveEntry(entry, callback) {
   })
 }
 
+function updateEntry(key, values, callback) {
+  getCollection(function(collection) {
+    collection.update( { _id : key.toLowerCase() }, 
+    { $set : values },
+    { safe: true },
+    callback); 
+  });
+}
+
 function getAll(callback) {
   getCollection(function(collection) {
     collection.find().toArray(callback);
   });
 }
 
-function resolve(key, callback) {
+function resolve(key, options, callback) {
+  key= key.replace(/^ *| *$/,'');
   if (!key || key==='') {
     callback("empty key");
     return;
@@ -73,7 +76,7 @@ function resolve(key, callback) {
       callback(err);
     }
     else if (obj) {
-      callback(false, obj.location);
+      applyRoutes(obj, options, callback);
     }
     else {
       resolveGoogle(key, function(err, location) {
@@ -85,13 +88,23 @@ function resolve(key, callback) {
             location: location,
             _id: key.toLowerCase()
           };
-          saveEntry(value, function(err) {
-            callback(err, value.location);
-          });
+          if (options && options.persist)
+            saveEntry(value, function(err) {
+              applyRoutes(value, options, callback);
+            });
+          else
+            applyRoutes(value, options, callback);
         }
       });
     }
   });
+}
+
+function applyRoutes(entry, options, callback) {
+  if (!options || !options.routes || !options.name || !options.routes[options.name])
+    callback(false, entry.location);
+  else
+    callback(false, entry.routs[options.name]);
 }
 
 // Use Google to Resolve
@@ -122,8 +135,8 @@ function resolveGoogle(address, callback) {
 exports.getAll= getAll;
 exports.getEntry= getEntry;
 exports.removeEntry= removeEntry;
+exports.updateEntry= updateEntry;
 exports.resolve= resolve;
-exports.resolveGoogle= resolveGoogle;
 
 
 

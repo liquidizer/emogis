@@ -10,6 +10,7 @@ var ical= require('./ical');
 var app = module.exports = express.createServer();
 
 // Configuration
+var ADMIN= false;
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -41,9 +42,8 @@ var emos = [
 
 
 app.get('/admin/update', function(req, res) {
-  console.log('update');
-  for (var i in req.query) {
-    console.log(i+ ' -> '+req.query[i]);
+  if (!ADMIN) {
+    return;
   }
   if (req.query.submit=='Delete') {
     geocode.removeEntry(req.query.id);
@@ -51,8 +51,31 @@ app.get('/admin/update', function(req, res) {
     res.end();
   }
   else {
-    res.writeHead(303, {"Location": "/admin/locations#"+encodeURI(req.query.id)});
-    res.end();
+    var routes={};
+    var hasRoutes= false;
+    for (var i in req.query) {
+      if (i.match(/^route-/)) {
+        routes[i.substring(6)]= req.query[i];
+        hasRoutes= hasRoutes || !!req.query[i];
+      }
+    }
+    var code= !!req.query.virtual ? "virtual" : req.query.geocode;
+    if (code.match(/^[0-9., ]+$/)) {
+      console.log(' IS GEO CODE ');
+      var value= eval("(["+code+"])");
+      code={ lat: value[0], lng: value[1] };
+    }
+    var values= {
+      location : code,
+      verified : !!req.query.verified,
+      routes : hasRoutes ? routes : undefined
+    }
+    geocode.updateEntry(req.query.id, values, function(err) {
+      if (!err) {
+        res.writeHead(303, { "Location": "/admin/locations" });
+        res.end();
+      }
+    });
   }
 });
 
@@ -126,7 +149,7 @@ app.get('/showmap', function(request, res){
 
 // geocoding API
 app.get('/geocode',function(request,response) {
-    geocode.resolveGoogle(request.query.address, function(error, loc) {
+    geocode.resolve(request.query.address, false, function(error, loc) {
       if (error || !loc) {
         response.writeHead(500, {"Content-Type": "text/plain"});
         response.end("{}");
