@@ -20,6 +20,18 @@ function getCollection(callback) {
   }
 }
 
+
+/* // Remove unverified entries
+getCollection(function(collection) {
+  collection.find({ verified: undefined }).toArray(function(err, values) {
+    for (var i in values) {
+      console.log('DELETE '+values[i].name);
+      collection.remove(values[i]);
+    }
+  });
+});
+*/
+
 function removeEntry(key) {
   getCollection( function(collection){
     collection.remove({

@@ -25,11 +25,15 @@ var sources= [
     { 
       name: 'Hamburg',
       home: 'http://www.piratenpartei-hamburg.de',
-      url: 'http://www.piratenpartei-hamburg.de/calendar/ical' }
+      url: 'http://www.piratenpartei-hamburg.de/calendar/ical' },
+    {
+      name: 'Bremen',
+      home: 'http://bremen.piratenpartei.de/Kalender',
+      url:  'http://bremen.piratenpartei.de/Kalender/calendars/Piratentermine.ics'
+    }
     ];
 
-//expandDaviCal('http://kalender.piratenpartei-nrw.de','Nordrhein Westfalen');
-//expandDaviCal('http://bremen.piratenpartei.de/Kalender','Bremen');
+expandDaviCal('http://kalender.piratenpartei-nrw.de','Nordrhein Westfalen');
 grabIcalLinks('http://piratenpartei-mv.de/kalender', 'Mäklenburg Vorpommern');
 //   [[/Cafe Central/, 'Hinter dem Rathaus 7, Wismar']]);
 
@@ -99,7 +103,8 @@ function reloadCalendar(index) {
 function geoCodeEvents(events, j, options, callback) {
   if (j<events.length) {
     updateEventData(events[j], options);
-    if (!events[j].geo && events[j].location) {
+    var isActive= new Date().getTime() < events[j]._dtstart.getTime();
+    if (isActive && !events[j].geo && events[j].location) {
       var address= events[j].location.value;
       geocode.resolve(address, { name : options.name, persist: true },
       function(error, location) {
@@ -194,9 +199,28 @@ function getByLocation(location) {
   return list;
 }
 
+function ISODateString(d) {
+    function pad(n){
+        return n<10 ? '0'+n : n;
+    }
+    return d.getUTCFullYear()+'-' +
+    pad(d.getUTCMonth()+1)+'-' +
+    pad(d.getUTCDate())+'T' +
+    pad(d.getUTCHours())+':' +
+    pad(d.getUTCMinutes())+':' +
+    pad(d.getUTCSeconds())+'Z';
+}
+
+// time to next refresh
+function expiry() {
+  var date= new Date();
+  date.setTime(date.getTime() + 3600000);
+  return ISODateString(date);
+}
+
 reloadCalendar(0);
 setInterval(function() {reloadCalendar(0);}, 7200000);
 
 exports.getPlaceMarks= getPlaceMarks;
 exports.getByLocation= getByLocation;
-
+exports.expiry= expiry;

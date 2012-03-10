@@ -61,7 +61,6 @@ app.get('/admin/update', function(req, res) {
     }
     var code= !!req.query.virtual ? "virtual" : req.query.geocode;
     if (code.match(/^[0-9., ]+$/)) {
-      console.log(' IS GEO CODE ');
       var value= eval("(["+code+"])");
       code={ lat: value[0], lng: value[1] };
     }
@@ -81,6 +80,10 @@ app.get('/admin/update', function(req, res) {
 
 app.get(/(\/admin)?\/locations/, function(req, res) {
   geocode.getAll(function(err, values) {
+    if (req.query.unverified) {
+      values= values.filter(function(x) { 
+        return !x.verified; });
+    }
     res.render('locations', {
       title: 'Emogis',
       codes: values
@@ -93,7 +96,9 @@ app.get(/(\/admin)?\/details\//, function(req, res) {
   var loc= decodeURI(match[2]);
   var events= ical.getByLocation(loc);
   geocode.getEntry(loc, function(err, entry) {
-    var routes={}
+    if (err) throw err;
+    if (!entry) throw "entry does not exist : "+loc;
+    var routes={};
     for (var i in events) {
       var ev= events[i];
       if (!routes[ev._src]) {
@@ -103,12 +108,11 @@ app.get(/(\/admin)?\/details\//, function(req, res) {
           routes[ev._src]= '';
       }
     }
-    if (err) throw err;
     res.render('details', {
       title: 'Emogis',
       address: loc,
       events: events,
-      admin: match[1]=='/admin',
+      admin: match[1]=='/admin' && ADMIN,
       geocode: entry.location,
       routes: routes
     });
@@ -161,18 +165,19 @@ app.get('/geocode',function(request,response) {
 });
 
 // get Calendar placemarks
-/*var ical= require('./ical');
 app.get('/placemarks.kml', function(req, res) {
   res.header('Content-Type','application/vnd.google-earch.kml+xml');
   res.render('placemarks', {
     marks: ical.getPlaceMarks(),
+    expiry: ical.expiry(),
     layout: false
   });
 });
-*/
+
 app.get('/placemarks.html', function(req, res) {
   res.render('placemarks', {
     marks: ical.getPlaceMarks(),
+    expiry: ical.expiry(),
     layout: false
   });
 });
