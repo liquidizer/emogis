@@ -5,19 +5,29 @@ html
     script(type='text/javascript', src='geoloc.js')
     link(rel='apple-touch-icon', href='emogis.png')
   body
-    h1 Emogis
-    p 
-      span Deine Position: 
-      span#location Not yet located 
-      span(style='margin:10px')
-        a#setloc(href='#', onclick='setLocation()') (Set)
-    h1 Welches Emoticon beschreibt deinen Zustand?
-    for emo in emos
-      a(href='#',onclick='clicked("#{emo.file}")')
-        div(style='border:1px solid #906;margin:2px;float:left;height:100px;width:150px;text-align:center; padding:5px')
-          img(src='icons/#{emo.file}.png', alt='#{emo.file}')
-          br
-          span #{emo.title}
+    h1 Piratiges Geoinformationssystem
+    hr
+    h2 Wo bist du?
+    table.list
+      tr
+        td Deine Koordinaten: 
+        td#location Deine Position wird bestimmt....
+      tr
+        td 
+        td
+          input#addr(width=30)
+          input(type='button', href='#', onclick='setLocation()', value='Adresse auflösen')
+    div(height='50px')
+      &nbsp;
+
+    div#emoSelect(style='display:none')
+      h1 Welches Emoticon beschreibt deinen Zustand?
+      for emo in emos
+        a(href='#',onclick='clicked("#{emo.file}")')
+          div.emobox
+            img(src='icons/#{emo.file}.png', alt='#{emo.file}')
+            br
+            span #{emo.title}
 
 
 

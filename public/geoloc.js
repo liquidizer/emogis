@@ -18,6 +18,8 @@ function success(position) {
   entry.long= position.coords.longitude;
   entry.located= true;
   setMessage(entry.lat+","+entry.long);
+  var obj= document.getElementById('emoSelect');
+  obj.setAttribute('style','');
   openView();
 }
 
@@ -45,30 +47,17 @@ function openView() {
 }
 
 function setLocation() {
-  var obj= document.getElementById('setloc');
-  var input= obj.previousSibling;
-  if (input && input.nodeName=='INPUT') {
-    var address= input.value;
-    window.localStorage.setItem('address',address);
-    obj.parentNode.removeChild(input);
-    setMessage("Resolving address....");
-    entry.located= false;
-    var request= new XMLHttpRequest();
-    request.onreadystatechange= function() {
+  var address= document.getElementById('addr').value;
+  var request= new XMLHttpRequest();
+  request.onreadystatechange= function() {
       var loc= eval(request.responseText);
       if (loc)
-        success({coords: {latitude: loc[1], longitude: loc[0]}});
+        success({coords: {latitude: loc[0], longitude: loc[1]}});
       else
         setMessage("Localization faild");
-    };
-    request.open("GET", "geocode?address="+address, true);
-    request.send(null);
-  } else {
-    input= document.createElement('input');
-    input.setAttribute('placeholder','Adresse');
-    input.value= window.localStorage.getItem('address');
-    obj.parentNode.insertBefore(input, obj);
-  }
+  };
+  request.open("GET", "geocode?address="+encodeURI(address), true);
+  request.send(null);
 }
 
 
