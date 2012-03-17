@@ -10,7 +10,7 @@ var ical= require('./ical');
 var app = module.exports = express.createServer();
 
 // Configuration
-var ADMIN= false;
+var ADMIN= true;
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -33,7 +33,10 @@ app.configure('production', function(){
 // Routes
 var locmap= {};
 var emos = [
+    {file: 'shock', title: 'Schockiert'},
+    {file: 'atwork', title: 'Bei der Arbeit'},
     {file: 'wanderer', title: 'Auf dem Weg'},
+    {file: 'sick', title: 'Krank'},
     {file: 'sleeping', title: 'Muede'},
     {file: 'waving', title: 'Kontaktfreudig'},
     {file: 'sad', title: 'Traurig'},
@@ -136,7 +139,7 @@ app.get('/showmap', function(request, res){
   locmap[request.query.id]= entry;
   // clear old entries from the map
   for (var key in locmap) {
-    var faded= Math.floor((now-locmap[key].time) / 360000);
+    var faded= Math.floor((now-locmap[key].time) / 720000);
     if (faded>9)
       delete locmap[key];
     else

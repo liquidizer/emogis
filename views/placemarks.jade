@@ -2,6 +2,10 @@ kml(xmlns='http://www.opengis.net/kml/2.2')
   NetworkLinkControl
     expires= expiry
   Document
+    Style(id='pp')
+      IconStyle
+        Icon
+          href http://gis.liquidizer.org/pp-dot.png
     for val,key in marks
       Placemark
         name=val.name
@@ -17,3 +21,4 @@ kml(xmlns='http://www.opengis.net/kml/2.2')
                     a(href=ev.url.value)= ev.summary.value
                   - else
                     span= ev.summary.value
+        StyleUrl #pp
