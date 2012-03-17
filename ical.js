@@ -129,9 +129,9 @@ function convertDate(date, isStart) {
     return new Date(match[1],match[2]-1,match[3],match[5],match[6]);
   else
     if (isStart)
-      return new Date(match[1],match[2],match[3],0,0);
+      return new Date(match[1],match[2]-1,match[3],0,0);
     else
-      return new Date(match[1],match[2],match[3],23,59);
+      return new Date(match[1],match[2]-1,match[3],23,59);
 }
 
 function formatDate(date) {
